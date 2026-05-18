@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="FirstProjectCMS/FirstProjectCMS.csproj" />
+  <Project Path="HotelManagementSystem/HotelManagementSystem.csproj" Id="f4744e6d-0ead-48fb-bd50-e4a127a642a3" />
 </Solution>
