@@ -116,7 +116,13 @@
 
                     // If the user choose to Exit
                     case 0:
-                        break;  
+                        exit = true;
+                        break;
+
+                    // if the user enter a number outside the list above
+                    default:
+                        Console.WriteLine("invalid option please try again");
+                        break;
                 }
 
                 Console.WriteLine("press any key to continue...");
