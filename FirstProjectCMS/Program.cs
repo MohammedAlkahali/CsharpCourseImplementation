@@ -50,7 +50,7 @@
                             }
                             else
                             {
-                                Console.WriteLine("Enter the patient ID");
+                                Console.Write("Enter the patient ID: ");
                                 PID = int.Parse(Console.ReadLine());
 
                                 Console.Write("Enter the patient name: ");  //| Asking to write the patient name 
@@ -120,7 +120,20 @@
                             break;
 
                         case 4:
-                            break;
+                        
+                        Console.Write("Enter the patient ID to delete: ");
+                        int patientID = int.Parse(Console.ReadLine());
+                        if (patientID == PID)
+                        {
+                            Pname = ""; Page = 0; Pphone = 0; Pemail = "";
+                            Console.WriteLine("The patient deleted successfully.");
+                        }
+                            
+                        else
+                        {
+                            Console.WriteLine("Patient not found.");
+                        }
+                        break;
 
                         case 0: // exit
                         exit = true;
