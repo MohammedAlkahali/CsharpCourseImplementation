@@ -19,7 +19,7 @@
             bool isRegistered = false;
             bool isCurrCheckedIn = false;
 
-            Random random = new Random();
+            Random random = new Random();  // --> To generate auto number
             bool exit = false;
 
             /////////////////////////////
@@ -76,6 +76,19 @@
 
                     // If the user choose to View Guest Information
                     case 2:
+                        Console.WriteLine("VIEW GUEST INFORMATION");
+                        Console.WriteLine();
+                        if(isRegistered = false)
+                        {
+                            Console.WriteLine("There is no information with this name");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Guest Name: " + guestName) ;
+                            Console.WriteLine("Guest Phone Number: " + guestPhone);
+                            Console.WriteLine("Room Type: " + roomType);
+                            Console.WriteLine("Nightly Rate: " + nightlyRate);
+                        }
                         break;
 
                     // If the user choose to Check-In Guest
