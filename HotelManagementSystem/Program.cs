@@ -84,15 +84,17 @@
                         }
                         else
                         {
-                            Console.WriteLine("Guest Name: " + guestName) ;
-                            Console.WriteLine("Guest Phone Number: " + guestPhone);
-                            Console.WriteLine("Room Type: " + roomType);
-                            Console.WriteLine("Nightly Rate: " + nightlyRate);
+                            Console.WriteLine("Guest Name: " + guestName.ToUpper()) ;
+                            Console.WriteLine("Guest Phone Number: " + guestPhone.ToString());
+                            Console.WriteLine("Room Type: " + roomType.ToString());
+                            Console.WriteLine("Nightly Rate: " + nightlyRate.ToString());
                         }
                         break;
 
                     // If the user choose to Check-In Guest
                     case 3:
+
+
                         break;
 
                     // If the user choose to Check-Out & Bill
