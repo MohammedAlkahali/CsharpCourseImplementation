@@ -9,13 +9,15 @@
             int guestPhone = 0;
             int roomNum = 0;
             string roomType = "";
-            int nightlyRate = 0;
+            double nightlyRate = 0;
+            int NumOfNights = 0;
             DateTime checkInDate = DateTime.Today;
             DateTime checkOutDate = DateTime.Today; 
-            int NumOfNights = 0;
+            
             string roomNotes = "";
-            int disPercentage = 0;
-            int loyaltyPoints = 0;
+            double disPercentage = 0;
+            double loyaltyPoints = 0;
+            double TotalBill = 0.0;
             bool isRegistered = false;
             bool isCurrCheckedIn = false;
 
@@ -72,13 +74,14 @@
 
                         Console.WriteLine("The guest added successfully !!");
                         Console.WriteLine("The room number is: " + roomNum);
+                        isRegistered = true;
                         break;
 
                     // If the user choose to View Guest Information
                     case 2:
                         Console.WriteLine("--VIEW GUEST INFORMATION--");
                         Console.WriteLine();
-                        if(isRegistered = false)
+                        if(isRegistered == false)
                         {
                             Console.WriteLine("There is no information with this name");
                         }
@@ -93,13 +96,33 @@
 
                     // If the user choose to Check-In Guest
                     case 3:
-                        Console.WriteLine("--CHECK IN GUEST--");
-                        Console.WriteLine() ;
-                        checkInDate = DateTime.Now;
-                        Console.WriteLine("Check in date is " + checkInDate.ToString());
-                        
+                        if (isRegistered == false)
+                        {
+                            Console.WriteLine("No guest registered");
+                            break;
+                        }
+                        if (isCurrCheckedIn)
+                        {
+                            Console.WriteLine("The guest checked In");
+                            break;
+                        }
+                            Console.Write("Enter the number of nights: ");
+                            NumOfNights = Convert.ToInt32(Console.ReadLine().Trim());
+                            checkInDate = DateTime.Now;
+                            checkOutDate = checkInDate.AddDays(NumOfNights);
 
-                        break;
+                            isCurrCheckedIn = true;
+                            Console.WriteLine("Checked In date: " + checkInDate.ToString("dd/MM/yyyy HH:mm"));
+                            Console.WriteLine("Checked out date: " + checkOutDate.ToString("dd/MM/yyyy"));
+                            Console.WriteLine("Nights: " + NumOfNights);
+                            break;
+                        
+                
+
+
+
+
+
 
                     // If the user choose to Check-Out & Bill
                     case 4:
@@ -143,12 +166,12 @@
                     default:
                         Console.WriteLine("invalid option please try again");
                         break;
-                }
+                } // Switch case (choice)
 
                 Console.WriteLine("press any key to continue...");
                 Console.ReadKey();
                 Console.Clear();
-            }
+            } //While 
 
         } // main
     } // class program
