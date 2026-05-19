@@ -52,7 +52,7 @@
                     case 1:  
 
                         Console.WriteLine();
-                        Console.WriteLine("Registering a New Guest");
+                        Console.WriteLine("--REGISTERING A NEW GUEST--");
                         Console.WriteLine();
 
                         Console.Write("Enter the guest name: ");
@@ -76,7 +76,7 @@
 
                     // If the user choose to View Guest Information
                     case 2:
-                        Console.WriteLine("VIEW GUEST INFORMATION");
+                        Console.WriteLine("--VIEW GUEST INFORMATION--");
                         Console.WriteLine();
                         if(isRegistered = false)
                         {
@@ -93,7 +93,11 @@
 
                     // If the user choose to Check-In Guest
                     case 3:
-
+                        Console.WriteLine("--CHECK IN GUEST--");
+                        Console.WriteLine() ;
+                        checkInDate = DateTime.Now;
+                        Console.WriteLine("Check in date is " + checkInDate.ToString());
+                        
 
                         break;
 
@@ -111,6 +115,7 @@
 
                     // If the user choose to Add Room Service Note
                     case 7:
+
                         break;
 
                     // If the user choose to Search Guest by Name
