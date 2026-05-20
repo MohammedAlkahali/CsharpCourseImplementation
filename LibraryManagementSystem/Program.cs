@@ -18,7 +18,7 @@
         static int totalBooksBorrowedThisSession = 0;
         static int totalFinesPaidThisSession = 0;
         //////////////////////////////////////////////////
-        
+
 
         // Function to check if the user registered or not
         public static bool CheckIsRegistered() //(True=yes , false=no)
@@ -36,6 +36,48 @@
             else
                 return false;
         }
+
+
+
+        //Function to register a new member
+        public static void RegisterMember()
+        {
+            Console.Write("Enter the member name: ");
+            memberName = Console.ReadLine();
+
+            Console.Write("Enter the member ID: ");
+            memberID = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter the member email: ");
+            memberEmail = Console.ReadLine();
+
+            Console.Write("Enter membership expiry date: ");
+            membershipExpiryDate = Console.ReadLine();
+
+            Console.Write("Enter the member tier: ");
+            memberTier = Convert.ToInt32(Console.ReadLine());
+
+            isMemberRegistered = true;
+            Console.WriteLine("The member registered successfully");
+            Console.WriteLine();
+        }
+
+
+
+        // Function to display a the member profile
+        public static void DisplayProfile()
+        {
+            Console.WriteLine("The Member Name: " + memberName.PadLeft(1));
+            Console.WriteLine("The Member ID: " + memberID);
+            Console.WriteLine("The Member Email: " + memberEmail.PadLeft(1));
+            Console.WriteLine("The membership expiry date: " + membershipExpiryDate);
+            Console.WriteLine("The Member Tier: " + memberTier);
+            Console.WriteLine("Exit");
+           
+        }
+
+
+
         static void Main(string[] args)
         {
             bool exit = false;
@@ -60,8 +102,9 @@
                 Console.WriteLine("     12) Calculate renewal fee");
                 Console.WriteLine("     13) Update the email for a member");
                 Console.WriteLine("     14) The member details summary");
-                Console.WriteLine();
+                Console.WriteLine("     0) Exit");
                 Console.Write("Select: ");
+                Console.WriteLine();
                 int Select = int.Parse(Console.ReadLine());
 
 
@@ -78,7 +121,118 @@
                             RegisterMember();
                         }
                         break;
+
+                    // To display the member profile
+                    case 2:
+                        checkRegisteredResult = CheckIsRegistered();
+
+                        if (checkRegisteredResult == true)
+                            {
+                                DisplayProfile();
+                            }
+                        break;
+                        
+
+                    case 3:
+                        break;
+
+
+
+
+
+                    case 4:
+                        break;
+
+
+
+
+
+                    case 5:
+                        break;
+
+
+
+
+
+                    case 6:
+                        break;
+
+
+
+
+
+                    case 7:
+                        break;
+
+
+
+
+
+                    case 8:
+                        break;
+
+
+
+
+
+                    case 9:
+                        break;
+
+
+
+
+
+                    case 10:
+                        break;
+
+
+
+
+
+                    case 11:
+                        break;
+
+
+
+
+
+                    case 12:
+                        break;
+
+
+
+
+
+                    case 13:
+                        break;
+
+
+
+
+
+                    case 14:
+                        break;
+
+
+
+
+
+                    case 15:
+                        break;
+
+
+
+
+      
+                } // Switch (Select)
+
+                
             } // While loop
+
+            Console.WriteLine("press any key to continue...");
+            Console.ReadKey();
+            Console.Clear(); // clear the console for better user experience
+
         } // static main
     } // class program
 } // namespace
