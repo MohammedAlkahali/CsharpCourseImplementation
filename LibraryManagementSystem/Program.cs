@@ -14,9 +14,10 @@
         static string bookGenre = "";
         static int numAvailableCopies = 0;
         static bool isMemberRegistered = false;
-        static bool isBookRegistered = false;
+        //static bool isBookRegistered = false;
         static int totalBooksBorrowedThisSession = 0;
         static int totalFinesPaidThisSession = 0;
+       
         //////////////////////////////////////////////////
 
 
@@ -77,6 +78,25 @@
         }
 
 
+        // Function to Check the name of the book 
+        public static bool BookSearchTitle (string SearchBook)
+        {
+            if  (SearchBook == bookTitle)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        // Function to search the book 
+        public static void RegisterBook()
+        {
+            Console.WriteLine("Write the name of the book: ");
+            bookTitle = Console.ReadLine();
+
+        }
+
 
         static void Main(string[] args)
         {
@@ -85,30 +105,27 @@
 
             {           // Display the main menu for the user to choose
 
-                Console.WriteLine("Hello and welcome to library management system.");
-                Console.WriteLine("      Please select from the main menu");
+                Console.WriteLine("Welcome to library management system.");
+                Console.WriteLine("  Please select from the main menu");
                 Console.WriteLine();
-                Console.WriteLine("     1) Register a new member");
-                Console.WriteLine("     2) Display the member profile");
-                Console.WriteLine("     3) Search book by title");
-                Console.WriteLine("     4) Borrow a book");
-                Console.WriteLine("     5) Return a book");
-                Console.WriteLine("     6) Calculate late fine");
-                Console.WriteLine("     7) Applying discount for a member");
-                Console.WriteLine("     8) Check the borrowing eligibility");
-                Console.WriteLine("     9) Register a book");
-                Console.WriteLine("     10) Generate ID for a member");
-                Console.WriteLine("     11) Display book details");
-                Console.WriteLine("     12) Calculate renewal fee");
-                Console.WriteLine("     13) Update the email for a member");
-                Console.WriteLine("     14) The member details summary");
-                Console.WriteLine("     0) Exit");
+                Console.WriteLine("   1) Register a new member");
+                Console.WriteLine("   2) Display the member profile");
+                Console.WriteLine("   3) Search book by title");
+                Console.WriteLine("   4) Borrow a book");
+                Console.WriteLine("   5) Return a book");
+                Console.WriteLine("   6) Calculate late fine");
+                Console.WriteLine("   7) Applying discount for a member");
+                Console.WriteLine("   8) Check the borrowing eligibility");
+                Console.WriteLine("   9) Register a book");
+                Console.WriteLine("   10) Generate ID for a member");
+                Console.WriteLine("   11) Display book details");
+                Console.WriteLine("   12) Calculate renewal fee");
+                Console.WriteLine("   13) Update the email for a member");
+                Console.WriteLine("   14) The member details summary");
+                Console.WriteLine("   0) Exit");
                 Console.Write("Select: ");
-                Console.WriteLine();
+               
                 int Select = int.Parse(Console.ReadLine());
-
-
-
 
                 switch (Select)
                 {
@@ -134,9 +151,18 @@
                         
 
                     case 3:
+
+                        Console.WriteLine("Enter the book title");
+
+                        if (BookSearchTitle(Console.ReadLine())== true)
+                        {
+                            Console.WriteLine("The book found");
+                        }
+                        else
+                        {
+                            Console.WriteLine("The book not found");
+                        }
                         break;
-
-
 
 
 
