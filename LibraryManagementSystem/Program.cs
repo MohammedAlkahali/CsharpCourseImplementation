@@ -20,6 +20,22 @@
         //////////////////////////////////////////////////
         
 
+        // Function to check if the user registered or not
+        public static bool CheckIsRegistered() //(True=yes , false=no)
+        {
+            if (isMemberRegistered == true) //-> Check if the member registered or not 
+            {
+                Console.WriteLine("The member registered");
+                return true;
+            }
+            else if(isMemberRegistered == false)
+            {
+                Console.WriteLine("No member profile found");
+                return false;
+            }
+            else
+                return false;
+        }
         static void Main(string[] args)
         {
             bool exit = false;
@@ -48,6 +64,20 @@
                 Console.Write("Select: ");
                 int Select = int.Parse(Console.ReadLine());
 
+
+
+
+                switch (Select)
+                {
+                    // For registering a new member
+                    case 1:
+                        bool checkRegisteredResult = CheckIsRegistered();
+
+                        if(checkRegisteredResult == false)
+                        {
+                            RegisterMember();
+                        }
+                        break;
             } // While loop
         } // static main
     } // class program
