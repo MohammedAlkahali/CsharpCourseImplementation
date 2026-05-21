@@ -17,7 +17,7 @@
         //static bool isBookRegistered = false;
         static int totalBooksBorrowedThisSession = 0;
         static int totalFinesPaidThisSession = 0;
-       
+        
         //////////////////////////////////////////////////
 
 
@@ -30,8 +30,9 @@
                 return true;
             }
             else if(isMemberRegistered == false)
+            
             {
-                Console.WriteLine("No member profile found");
+                Console.WriteLine("There is no profile information, please register");
                 return false;
             }
             else
@@ -43,24 +44,28 @@
         //Function to register a new member
         public static void RegisterMember()
         {
-            Console.Write("Enter the member name: ");
-            memberName = Console.ReadLine();
+            if (isMemberRegistered == false)
+            {
+                Console.Write("Enter the member name: ");
+                memberName = Console.ReadLine();
 
-            Console.Write("Enter the member ID: ");
-            memberID = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter the member ID: ");
+                memberID = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Enter the member email: ");
-            memberEmail = Console.ReadLine();
+                Console.Write("Enter the member email: ");
+                memberEmail = Console.ReadLine();
 
-            Console.Write("Enter membership expiry date: ");
-            membershipExpiryDate = Console.ReadLine();
+                Console.Write("Enter membership expiry date: ");
+                membershipExpiryDate = Console.ReadLine();
 
-            Console.Write("Enter the member tier: ");
-            memberTier = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter the member tier: ");
+                memberTier = Convert.ToInt32(Console.ReadLine());
 
-            isMemberRegistered = true;
-            Console.WriteLine("The member registered successfully");
-            Console.WriteLine();
+                isMemberRegistered = true;
+                Console.WriteLine("The member registered successfully");
+                Console.WriteLine();
+            }
+            
         }
 
 
@@ -69,13 +74,15 @@
         public static void DisplayProfile()
         {
             Console.WriteLine("The Member Name: " + memberName.PadLeft(1));
-            Console.WriteLine("The Member ID: " + memberID);
+            Console.WriteLine("The Member ID: " + memberID.ToString());
             Console.WriteLine("The Member Email: " + memberEmail.PadLeft(1));
-            Console.WriteLine("The membership expiry date: " + membershipExpiryDate);
-            Console.WriteLine("The Member Tier: " + memberTier);
-            Console.WriteLine("Exit");
+            Console.WriteLine("The membership expiry date: " + membershipExpiryDate.ToString());
+            Console.WriteLine("The Member Tier: " + memberTier.ToString());
+            Console.WriteLine("Exit" );
            
         }
+
+
 
 
         // Function to Check the name of the book 
@@ -89,13 +96,16 @@
                 return false;
         }
 
+
+
+
         // Function to search the book 
         public static void RegisterBook()
         {
-            Console.WriteLine("Write the name of the book: ");
-            bookTitle = Console.ReadLine();
-
+            Console.Write("Write the title of the book: "); 
         }
+
+
 
 
         static void Main(string[] args)
@@ -122,7 +132,8 @@
                 Console.WriteLine("   12) Calculate renewal fee");
                 Console.WriteLine("   13) Update the email for a member");
                 Console.WriteLine("   14) The member details summary");
-                Console.WriteLine("   0) Exit");
+                Console.WriteLine("   0) Exit" );
+                exit = true;
                 Console.Write("Select: ");
                
                 int Select = int.Parse(Console.ReadLine());
@@ -147,16 +158,20 @@
                             {
                                 DisplayProfile();
                             }
+                        else
+                        {
+                            isMemberRegistered = false;
+                        }
                         break;
                         
-
+                    // To Search book by title
                     case 3:
 
-                        Console.WriteLine("Enter the book title");
-
-                        if (BookSearchTitle(Console.ReadLine())== true)
+                        RegisterBook();
+                        
+                        if (BookSearchTitle(Console.ReadLine()) == true)  // Read the input and check 
                         {
-                            Console.WriteLine("The book found");
+                            Console.WriteLine("The book found" +bookTitle.ToLower().Substring(3));
                         }
                         else
                         {
@@ -251,13 +266,13 @@
 
       
                 } // Switch (Select)
+                Console.WriteLine("press any key to continue...");
+                Console.ReadKey();
+                Console.Clear(); // clear the console for better user experience
 
-                
             } // While loop
 
-            Console.WriteLine("press any key to continue...");
-            Console.ReadKey();
-            Console.Clear(); // clear the console for better user experience
+            
 
         } // static main
     } // class program
