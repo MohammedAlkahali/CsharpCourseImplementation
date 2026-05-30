@@ -14,7 +14,7 @@
         static string bookGenre = "";
         static int numAvailableCopies = 0;
         static bool isMemberRegistered = false;
-        //static bool isBookRegistered = false;
+        static bool isBookRegistered = false;
         static int totalBooksBorrowedThisSession = 0;
         static int totalFinesPaidThisSession = 0;
         
@@ -106,7 +106,21 @@
         }
 
 
+        // To reduces available copies by 1
 
+        public static void BorrowBook(ref int copies)
+        {
+            if (copies > 0)
+            {
+                copies = Math.Max(copies - 1, 0);
+                totalBooksBorrowedThisSession++;
+                Console.WriteLine("Book borrowed successfully. Copies remaining: " + copies);
+            }
+            else
+            {
+                Console.WriteLine("No copies available to borrow.");
+            }
+        }
 
         static void Main(string[] args)
         {
@@ -133,7 +147,7 @@
                 Console.WriteLine("   13) Update the email for a member");
                 Console.WriteLine("   14) The member details summary");
                 Console.WriteLine("   0) Exit" );
-                exit = true;
+                
                 Console.Write("Select: ");
                
                 int Select = int.Parse(Console.ReadLine());
@@ -142,6 +156,7 @@
                 {
                     // For registering a new member
                     case 1:
+                        
                         bool checkRegisteredResult = CheckIsRegistered();
 
                         if(checkRegisteredResult == false)
@@ -262,9 +277,19 @@
                         break;
 
 
+                    case 0:
+                        exit = true;
+                        Console.WriteLine("Thank you for using the Library System. Goodbye!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option. Please select a valid number.");
+                        break;
 
 
-      
+
+
+
                 } // Switch (Select)
                 Console.WriteLine("press any key to continue...");
                 Console.ReadKey();
