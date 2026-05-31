@@ -197,8 +197,10 @@
 
 
                     case 4:
+                        bool borrowCheck = CheckIsRegistered();
+                        if (borrowCheck == true)
+                            BorrowBook(ref numAvailableCopies);
                         break;
-
 
 
 
