@@ -108,6 +108,7 @@
 
         // To reduces available copies by 1
 
+        // To reduces available copies by 1
         public static void BorrowBook(ref int copies)
         {
             if (copies > 0)
@@ -215,6 +216,9 @@
 
 
                     case 5:
+                        bool returnCheck = CheckIsRegistered();
+                        if (returnCheck == true)
+                            ReturnBook(ref numAvailableCopies);
                         break;
 
 
