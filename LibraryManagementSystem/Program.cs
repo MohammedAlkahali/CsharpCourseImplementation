@@ -132,6 +132,15 @@
             Console.WriteLine("Book returned successfully. Copies now available: " + copies);
         }
 
+
+
+        // To calculate the late fine
+        public static double CalculateLateFine(int overdueDays)
+        {
+            double fine = overdueDays * 0.5 * Math.Sqrt(overdueDays);
+            fine = Math.Round(fine, 2);
+            return fine;
+        }
         static void Main(string[] args)
         {
             bool exit = false;
