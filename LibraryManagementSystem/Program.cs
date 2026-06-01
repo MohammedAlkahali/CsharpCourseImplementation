@@ -235,6 +235,15 @@
 
 
                     case 6:
+                        bool fineCheck = CheckIsRegistered();
+                        if (fineCheck == true)
+                        {
+                            Console.Write("Enter number of overdue days: ");
+                            int days = int.Parse(Console.ReadLine());
+                            double fine = CalculateLateFine(days);
+                            totalFinesPaidThisSession++;
+                            Console.WriteLine("Late fine amount: " + fine + " OMR");
+                        }
                         break;
 
 
