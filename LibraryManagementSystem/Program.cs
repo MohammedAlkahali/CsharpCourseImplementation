@@ -8,7 +8,7 @@
         static int memberID = 0;
         static string memberEmail = "";
         static string membershipExpiryDate = "";
-        static int memberTier = 0;
+        static string memberTier = "gold";
         static string bookTitle = "";
         static string bookAuthor = "";
         static string bookGenre = "";
@@ -41,7 +41,8 @@
 
 
 
-        //Function to register a new member
+
+        // Function to register a new member
         public static void RegisterMember()
         {
             if (isMemberRegistered == false)
@@ -59,7 +60,7 @@
                 membershipExpiryDate = Console.ReadLine();
 
                 Console.Write("Enter the member tier: ");
-                memberTier = Convert.ToInt32(Console.ReadLine());
+                memberTier = Console.ReadLine();
 
                 isMemberRegistered = true;
                 Console.WriteLine("The member registered successfully");
@@ -67,6 +68,7 @@
             }
             
         }
+
 
 
 
@@ -106,7 +108,7 @@
         }
 
 
-        // To reduces available copies by 1
+
 
         // To reduces available copies by 1
         public static void BorrowBook(ref int copies)
@@ -125,12 +127,14 @@
 
 
 
+
         // Function to return a book
         public static void ReturnBook(ref int copies)
         {
             copies = Math.Min(copies + 1, 99);
             Console.WriteLine("Book returned successfully. Copies now available: " + copies);
         }
+
 
 
 
@@ -141,6 +145,33 @@
             fine = Math.Round(fine, 2);
             return fine;
         }
+
+
+
+
+        // To apply discount member
+        public static double ApplyDiscount(double Dis)
+        {
+             Dis = 20.0;
+
+            if (memberTier.ToUpper() == "gold")
+            {
+                return Dis - (Dis * 0.20); // 20% discount
+
+            }
+            else if (memberTier.ToUpper() == "silver")
+            {
+                return Dis - (Dis * 0.10); // 10% discount
+            }
+            else
+            {
+                return Dis;
+            }
+        }
+
+
+
+
         static void Main(string[] args)
         {
             bool exit = false;
@@ -213,27 +244,21 @@
                         }
                         break;
 
-
-
+                    // Borrow a Book 
                     case 4:
                         bool borrowCheck = CheckIsRegistered();
                         if (borrowCheck == true)
                             BorrowBook(ref numAvailableCopies);
                         break;
 
-
-
-
+                    // Return a Book 
                     case 5:
                         bool returnCheck = CheckIsRegistered();
                         if (returnCheck == true)
                             ReturnBook(ref numAvailableCopies);
                         break;
 
-
-
-
-
+                    // Calculate Late Fine 
                     case 6:
                         bool fineCheck = CheckIsRegistered();
                         if (fineCheck == true)
@@ -246,19 +271,30 @@
                         }
                         break;
 
-
-
-
-
+                    // Apply Member Discount
                     case 7:
+                        if (isMemberRegistered = false)
+                        {
+                            Console.WriteLine("The member not regietered. Register first");
+                        }
+                        else
+                        {
+                            Console.Write("Enter the book price: ");
+                            double Dis = Convert.ToDouble(Console.ReadLine());
+                            double FinalPrice = ApplyDiscount(Dis);
+                            Console.WriteLine("Discount Price: $" + Dis);
+                        }
                         break;
-
-
-
 
 
                     case 8:
                         break;
+
+
+
+
+
+
 
 
 
@@ -327,11 +363,7 @@
                 Console.WriteLine("press any key to continue...");
                 Console.ReadKey();
                 Console.Clear(); // clear the console for better user experience
-
             } // While loop
-
-            
-
         } // static main
     } // class program
 } // namespace
