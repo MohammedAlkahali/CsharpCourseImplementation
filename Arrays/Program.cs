@@ -2,7 +2,22 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+
+        // Problem 1: Temperature Log 
+        public static void temp()
+        {
+
+            {
+                double[] temperatures = new double[] { 48.3, 40.5, 43.9, 50.1, 44.1, 30.3, 40.9 };
+                for (double i = 0; i < temperatures.Length; i++)
+                {
+                    Console.Write("The temperature for day " + (i + 1) + " is: ");
+                    Console.WriteLine(temperatures[(int)i]);
+                    
+                }
+
+            }
+        }
         {
             Console.WriteLine("Hello, World!");
         }
