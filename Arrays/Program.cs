@@ -35,3 +35,36 @@
                 Console.Write("Select: ");
 
                 int Select = int.Parse(Console.ReadLine());
+
+                switch (Select)
+                {
+                    case 0:
+                        exit = true;
+                        Console.WriteLine("Goodbye!");
+                        break;
+
+                    case 1:
+                        temp();
+
+
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 10:
+                    case 11:
+
+                    default:
+                        Console.WriteLine("Invalid option. Please select a valid number.");
+                        break;
+
+                } // Switch
+            } // While
+        } // Main
+    } // Program
+} // Namespace
