@@ -122,6 +122,15 @@
             }
         }
 
+
+
+        // Function to return a book
+        public static void ReturnBook(ref int copies)
+        {
+            copies = Math.Min(copies + 1, 99);
+            Console.WriteLine("Book returned successfully. Copies now available: " + copies);
+        }
+
         static void Main(string[] args)
         {
             bool exit = false;
