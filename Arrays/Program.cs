@@ -85,6 +85,19 @@
 
 
 
+        // Problem 5: Classroom Grade Report  
+        public static void Grade()
+        {
+            int[] grades = { 88, 76, 90, 63, 80, 89, 69, 72, 92, 83 };
+            Array.Sort(grades);
+            Array.Reverse(grades);
+            for (int i = 0; i < grades.Length; i++)
+            {
+                Console.Write("The rank " + (i + 1) + " is: ");
+                Console.WriteLine(grades[i]);
+            }
+        }
+
         static void Main(string[] args)
             {
 
@@ -131,6 +144,8 @@
                             Race();
                             break;
                         case 5:
+                            Grade();
+                            break;
                         case 6:
                         case 7:
                         case 8:
