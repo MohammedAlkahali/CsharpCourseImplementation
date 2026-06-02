@@ -103,7 +103,6 @@
 
 
         // Problem 6: Warehouse Inventory Check 
-
         public static void Quantity()
         {
             int[] quantities = { 3, 2, 8, 5, 4, 9, 1, 6 };
@@ -117,8 +116,25 @@
 
             
         }
-            
-            
+
+
+
+
+        // Problem 7: Library Book Shelf Scanner
+        public static void Copy()
+        {
+            int[] copies = { 10, 12, 17, 8, 7, 20, 5, 19, 11 };
+
+            foreach (int i in copies)
+            {
+                Console.Write("The copies available: ");
+                Console.WriteLine(i);
+                
+            }
+        }
+
+
+
 
 
         static void Main(string[] args)
@@ -173,6 +189,8 @@
                             Quantity();
                             break;
                         case 7:
+                            Copy();
+                            break;
                         case 8:
                         case 9:
                         case 10:
