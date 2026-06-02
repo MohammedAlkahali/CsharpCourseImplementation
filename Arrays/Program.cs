@@ -4,11 +4,11 @@
     {
 
         // Problem 1: Temperature Log 
-        public static void temp()
+        public static void Temp()
         {
 
             {
-                double[] temperatures = new double[] { 48.3, 40.5, 43.9, 50.1, 44.1, 30.3, 40.9 };
+                double[] temperatures = { 48.3, 40.5, 43.9, 50.1, 44.1, 30.3, 40.9 };
                 for (double i = 0; i < temperatures.Length; i++)
                 {
                     Console.Write("The temperature for day " + (i + 1) + " is: ");
@@ -18,17 +18,38 @@
 
             }
         }
-        {
-            Console.WriteLine("Hello, World!");
-        }
-    }
-}
 
+
+
+
+        // Problem 2: Student Score Board
+        public static void Score()
+        {
+            int[] scores = { 54, 86, 44, 76, 87, 61 };
+
+            foreach (int i in scores) 
+            {
+                
+                {
+                    Console.Write("The score of the student " );
+                    Console.WriteLine(i);
+                    
+                }
+
+                Array.Reverse(scores);
+                Console.WriteLine(scores);
+
+            }
+                
+        }
+           
+           
 
 
 
         static void Main(string[] args)
         {
+            
             bool exit = false;
             while (exit == false)
 
@@ -59,11 +80,12 @@
                         break;
 
                     case 1:
-                        temp();
-
-
+                        Temp();
                         break;
                     case 2:
+                        Score();
+                        
+                        break;
                     case 3:
                     case 4:
                     case 5:
