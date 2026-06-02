@@ -46,6 +46,7 @@
 
 
 
+        // Problem 3: Product Price Finder 
         public static void price()
         {
             double[] prices = { 7.5, 6, 3.8, 9, 4 };
@@ -61,7 +62,30 @@
             int index = Array.IndexOf(prices, 9);
             Console.WriteLine("The index of the number 9 is " + index);
         }
-            static void Main(string[] args)
+
+
+
+
+        // Problem 4: Race Finish Times
+        public static void Race()
+        {
+            int[] finishTimes = { 18, 19, 17, 16, 20, 22, 14, 15 };
+
+            foreach (int i in finishTimes)
+            {
+                Console.Write("The record of the race finish times is : ");
+                Console.WriteLine(i);
+            }
+
+                Array.Sort(finishTimes);
+                Console.WriteLine("The sorted numbers are " + finishTimes);
+
+        }
+
+
+
+
+        static void Main(string[] args)
             {
 
                 bool exit = false;
@@ -104,6 +128,8 @@
                             price();
                             break;
                         case 4:
+                            Race();
+                            break;
                         case 5:
                         case 6:
                         case 7:
