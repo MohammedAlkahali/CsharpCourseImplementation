@@ -98,6 +98,29 @@
             }
         }
 
+
+
+
+
+        // Problem 6: Warehouse Inventory Check 
+
+        public static void Quantity()
+        {
+            int[] quantities = { 3, 2, 8, 5, 4, 9, 1, 6 };
+            int Total = 0;
+            for (int i = 0; i < quantities.Length; i++)
+            { 
+                Total = Total + quantities[i];  
+            }
+
+            Console.WriteLine($"The total is: " + Total);
+
+            
+        }
+            
+            
+
+
         static void Main(string[] args)
             {
 
@@ -147,6 +170,8 @@
                             Grade();
                             break;
                         case 6:
+                            Quantity();
+                            break;
                         case 7:
                         case 8:
                         case 9:
