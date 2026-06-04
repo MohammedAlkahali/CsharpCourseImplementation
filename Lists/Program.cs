@@ -83,7 +83,7 @@
             foreach (int time in finishTimes)
             {
                 Console.WriteLine("- " + time + " Seconds");
-        }
+            }
 
             Console.WriteLine("Number of partisipant: " + finishTimes.Count);
         }
@@ -142,7 +142,7 @@
             foreach (int count in copies)
             {
                 Console.WriteLine("- " + count + " Copies");
-        }
+            }
 
             copies.Sort();
             Console.WriteLine("The sorted copy counts: ");
