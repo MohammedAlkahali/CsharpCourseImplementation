@@ -13,7 +13,6 @@
                 {
                     Console.Write("The temperature for day " + (i + 1) + " is: ");
                     Console.WriteLine(temperatures[(int)i]);
-
                 }
 
             }
