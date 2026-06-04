@@ -80,6 +80,31 @@
 
             Console.WriteLine("Number of partisipant: " + finishTimes.Count);
         }
+
+
+
+
+        // Problem 5: Classroom Grade Report  
+        public static void Grade()
+        {
+            List<int> grades = new List<int>();
+            grades.AddRange(new int[] { 88, 76, 90, 63, 80, 89, 69, 72, 92, 83 });
+
+            grades.Sort();
+            grades.Reverse();
+            for (int i = 0; i < grades.Count; i++)
+            {
+                Console.Write("The rank " + (i + 1) + " is: ");
+                Console.WriteLine(grades[i]);
+            }
+        }
+
+
+        }
+
+
+
+
         }
         static void Main(string[] args)
         {
@@ -128,6 +153,8 @@
                         break;
 
                     case 5:
+                        Grade();
+                        break;
 
                     case 6:
 
