@@ -16,6 +16,10 @@
 
             }
         }
+
+
+
+
         // Problem 2: Student Score Board
         public static void Score()
         {
@@ -28,6 +32,9 @@
                 Console.WriteLine(number);
             }
         }
+
+
+
 
         // Problem 3: Product Price Finder 
         public static void price()
@@ -100,6 +107,25 @@
         }
 
 
+
+
+
+        // Problem 6: Warehouse Inventory Check 
+        public static void Quantity()
+        {
+
+            List <int> quantities = new List<int>();
+            quantities.AddRange(new int[] { 3, 2, 8, 5, 4, 9, 1, 6 });
+
+            int Total = 0;
+            for (int i = 0; i < quantities.Count; i++)
+            {
+                Total = Total + quantities[i];
+            }
+            Console.WriteLine($"The total is: " + Total);
+
+            double average = (double)Total / quantities.Count;
+            Console.WriteLine("Average stock per slot: " + average);
         }
 
 
@@ -140,6 +166,7 @@
                     case 1:
                         Temp();
                         break;
+
                     case 2:
                         Score();
                         break;
@@ -157,6 +184,8 @@
                         break;
 
                     case 6:
+                        Quantity();
+                        break;
 
                     case 7:
 
