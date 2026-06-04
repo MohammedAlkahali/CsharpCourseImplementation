@@ -16,6 +16,18 @@
 
             }
         }
+        // Problem 2: Student Score Board
+        public static void Score()
+        {
+            List<int> scores = new List<int>();
+            scores.AddRange(new int[] { 54, 86, 44, 76, 87, 61 });
+
+            foreach (int number in scores)
+            {
+                Console.Write("The score of the student: ");
+                Console.WriteLine(number);
+            }
+        }
         static void Main(string[] args)
         {
             bool exit = false;
@@ -51,6 +63,8 @@
                         Temp();
                         break;
                     case 2:
+                        Score();
+                        break;
 
                     case 3:
 
