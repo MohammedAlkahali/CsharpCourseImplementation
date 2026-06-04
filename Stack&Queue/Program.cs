@@ -28,6 +28,10 @@
 
                 switch (Select)
                 {
+                    case 0:
+                        exit = true;
+                        Console.WriteLine("Goodbye!");
+                        break;
 
                     case 1:
                         break;
