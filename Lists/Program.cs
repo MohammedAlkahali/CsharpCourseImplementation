@@ -131,7 +131,32 @@
 
 
 
+        // Problem 7: Library Book Shelf Scanner
+        public static void Copy()
+        {
+
+            List<int> copies = new List<int>();
+            copies.AddRange (new int[] { 10, 12, 17, 8, 7, 20, 5, 19, 11 });
+
+            Console.WriteLine("The copies available: ");
+            foreach (int count in copies)
+            {
+                Console.WriteLine("- " + count + " Copies");
         }
+
+            copies.Sort();
+            Console.WriteLine("The sorted copy counts: ");
+
+            foreach (int count in copies)
+            {
+                Console.WriteLine("- " + count + " Copies");
+            }
+
+        }
+
+
+
+
         static void Main(string[] args)
         {
             bool exit = false;
@@ -188,6 +213,8 @@
                         break;
 
                     case 7:
+                        Copy(); 
+                        break;
 
                     case 8:
 
