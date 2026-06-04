@@ -28,6 +28,19 @@
                 Console.WriteLine(number);
             }
         }
+
+        // Problem 3: Product Price Finder 
+        public static void price()
+        {
+            List<double> prices = new List<double>();
+            prices.AddRange(new double[] { 7.5, 6, 3.8, 9, 4 });
+
+            for (int i = 0; i < prices.Count; i++)
+            {
+                Console.Write("Price of the product " + (i + 1) + " is: ");
+                Console.WriteLine(prices[i] + " OMR");
+            }
+        }
         static void Main(string[] args)
         {
             bool exit = false;
@@ -67,6 +80,8 @@
                         break;
 
                     case 3:
+                        price();
+                        break;
 
                     case 4:
 
