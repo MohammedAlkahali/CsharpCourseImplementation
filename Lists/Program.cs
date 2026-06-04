@@ -53,6 +53,33 @@
                 Console.WriteLine("Price " + target + " not found.");
             }
         }
+
+
+
+
+        // Problem 4: Race Finish Times
+        public static void Race()
+        {
+
+            List <int> finishTimes = new List<int>();
+            finishTimes.AddRange(new int[] { 18, 19, 17, 16, 20, 22, 14, 15 });
+
+
+            Console.WriteLine("Original finish time is: ");
+            foreach (int time in finishTimes)
+            {
+                Console.WriteLine("- " + time + " Seconds");
+            }
+
+            finishTimes.Sort();
+            Console.WriteLine("Sorted finish times (Fastest first): ");
+            foreach (int time in finishTimes)
+            {
+                Console.WriteLine("- " + time + " Seconds");
+        }
+
+            Console.WriteLine("Number of partisipant: " + finishTimes.Count);
+        }
         }
         static void Main(string[] args)
         {
@@ -97,6 +124,8 @@
                         break;
 
                     case 4:
+                        Race();
+                        break;
 
                     case 5:
 
