@@ -40,6 +40,19 @@
                 Console.Write("Price of the product " + (i + 1) + " is: ");
                 Console.WriteLine(prices[i] + " OMR");
             }
+
+            double target = 3.8;
+            int index = prices.IndexOf(target);
+
+            if (index != -1)
+            {
+                Console.WriteLine("Price " + target + " found at index " + index + " (Product " + (index + 1) + "). ");
+            }
+            else
+            {
+                Console.WriteLine("Price " + target + " not found.");
+            }
+        }
         }
         static void Main(string[] args)
         {
