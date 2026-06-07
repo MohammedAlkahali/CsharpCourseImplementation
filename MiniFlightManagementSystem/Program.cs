@@ -36,8 +36,6 @@
         // ==========================================================================================
 
         // Case 1 - Register New Passenger
-
-
         public static void NewPassenger(List<string> passengerNames, List<string> ticketNumbers)
         {
             Console.Write("Enter the passenger full name: ");
@@ -111,11 +109,24 @@
                 if (cancelledTickets.Contains(ticketNumbers[i]))
                 {
                     status = "CANCELLED";
-        }
+                }
                 else
                     Console.WriteLine((i+1) + "   |    " + passengerNames[i] + "      |  " + ticketNumbers[i] + "  |  " + status);
 
-            static void Main(string[] args)
+                Console.WriteLine();
+                Console.WriteLine("The total passenger: " +passengerNames.Count);
+                Console.WriteLine();
+            }
+            
+        }
+
+
+
+
+        // Case 03 Book a Flight Ticket
+
+
+        static void Main(string[] args)
             {
             bool exit = false;
             while (exit == false)
@@ -139,7 +150,7 @@
                 Console.WriteLine(" =============================================");
 
                 Console.Write("   -> Select: ");
-
+                
                 int Select = int.Parse(Console.ReadLine());
 
                 switch (Select)
@@ -151,6 +162,7 @@
 
                     // To View All Passengers
                     case 2:
+                        ViewPassenger(passengerNames, ticketNumbers, cancelledTickets);
                         break;
 
                     // To Book a Flight Ticket
