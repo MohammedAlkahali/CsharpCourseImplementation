@@ -4,5 +4,6 @@
   <Project Path="HotelManagementSystem/HotelManagementSystem.csproj" Id="f4744e6d-0ead-48fb-bd50-e4a127a642a3" />
   <Project Path="LibraryManagementSystem/LibraryManagementSystem.csproj" Id="df63c409-1246-40bd-99a1-8a5eb8153712" />
   <Project Path="Lists/Lists.csproj" Id="a0c3f210-c649-437c-a4df-b7f77db19a28" />
+  <Project Path="MiniFlightManagementSystem/MiniFlightManagementSystem.csproj" Id="081799a3-e84f-4ba2-adaa-c15488130f70" />
   <Project Path="Stack&amp;Queue/Stack&amp;Queue.csproj" Id="622da500-20b0-4436-aeb8-085ef54e0676" />
 </Solution>
