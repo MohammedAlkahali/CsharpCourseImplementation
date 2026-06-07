@@ -3,38 +3,91 @@
     internal class Program
     {
 
-        List<String> passengerNames = new List<String>()
+        static List<String> passengerNames = new List<String>()
 
         {
             "Mohammed", "Ahmed", "Luqman", "Ali", "Salem"
         };
 
-        List<int> ticketNumbers = new List<int>()
+        static List<String> ticketNumbers = new List<String>()
         {
-            10, 20, 30, 40, 50
+            "TKT-001", "TKT-002", "TKT-003", "TKT-004", "TKT-005"
         };
 
-        string[] flightNumbers = { "FN-101", "FN-102", "FN-103", "FN-104", "FN-105", "FN-106" };
+        static string[] flightNumbers = { "FN-101", "FN-102", "FN-103", "FN-104", "FN-105", "FN-106" };
 
-        List<String> availableDates = new List<String>()
+        static  List<String> availableDates = new List<String>()
         {
             "1 - 7 - 2026", "3 - 7 - 2026", "5 - 7 - 2026"
         };
 
-        Dictionary<int, string> bookingRecord = new Dictionary<int, string>();
+        static Dictionary<int, string> bookingRecord = new Dictionary<int, string>();
 
-        Queue<String> checkedInQueue = new Queue<string>();
+        static  Queue<String> checkedInQueue = new Queue<string>();
 
-        Stack<string> boardingStack = new Stack<string>();
+        static Stack<string> boardingStack = new Stack<string>();
 
-        List<string> cancelledTickets = new List<string>();
+        static List<string> cancelledTickets = new List<string>();
 
-        Dictionary<string,string> passengerSeatMap = new Dictionary<string,string>();
+        static Dictionary<string,string> passengerSeatMap = new Dictionary<string,string>();
 
-        Queue<string> waitlistQueue = new Queue<string>();
+        static Queue<string> waitlistQueue = new Queue<string>();
 
-        static void Main(string[] args)
+        // ==========================================================================================
+
+        // Case 1 - Register New Passenger
+
+
+        public static void NewPassenger(List<string> passengerNames, List<string> ticketNumbers)
         {
+            Console.Write("Enter the passenger full name: ");
+            string name = Console.ReadLine();
+
+            // 1st Requirement
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                Console.WriteLine();
+                Console.WriteLine("The name can't be empty, please write a name!");
+                Console.WriteLine();
+                return;
+            }
+
+            // 2nd Requirement
+            bool nameExist = false;
+            foreach (string existingName in passengerNames)
+            {
+                if (string.Equals(existingName, name))
+                {
+                    nameExist = true;
+                    break;
+                }
+            }
+
+            if (nameExist)
+            {
+                Console.WriteLine();
+                Console.WriteLine("The name of the passenger already exists.");
+                Console.WriteLine();
+                return;
+            }
+
+            // 3rd Requirement
+            string ticketId = "TKT-" + (ticketNumbers.Count + 1).ToString("D3");
+
+            // 4th Requirement
+            passengerNames.Add(name);
+            ticketNumbers.Add(ticketId);
+
+            // 5th Requirement
+            Console.WriteLine();
+            Console.WriteLine("Passenger registered successfully!");
+            Console.WriteLine("Name: " + name + " | Ticket ID: " + ticketId);
+            Console.WriteLine();
+
+        }
+
+            static void Main(string[] args)
+            {
             bool exit = false;
             while (exit == false)
 
@@ -64,6 +117,7 @@
                 {
                     // For registering a new Passenger
                     case 1:
+                        NewPassenger(passengerNames, ticketNumbers); 
                         break;
 
                     // To View All Passengers
