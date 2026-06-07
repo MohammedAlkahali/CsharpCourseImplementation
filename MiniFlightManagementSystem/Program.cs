@@ -35,7 +35,9 @@
 
         static void Main(string[] args)
         {
-            
+            bool exit = false;
+            while (exit == false)
+
             {           // Display the main menu for the user to choose
 
                 Console.WriteLine("=============================================\r\nWELCOME TO SKY WINGS FLIGHT MANAGEMENT SYSTEM\r\n=============================================");
@@ -57,3 +59,50 @@
                 Console.Write("   -> Select: ");
 
                 int Select = int.Parse(Console.ReadLine());
+
+                switch (Select)
+                {
+                    // For registering a new Passenger
+                    case 1:
+                        break;
+
+                    // To View All Passengers
+                    case 2:
+                        break;
+
+                    // To Book a Flight Ticket
+                    case 3:
+                        break;
+
+                    // View Booking Detail
+                    case 4:
+                        break;
+
+                    // Update a Booking
+                    case 5:
+                        break;
+
+                    // Cancel a Ticket
+                    case 6:
+                        break;
+
+                    // Passenger Check-In
+                    case 7:
+                        break;
+                    // Board Passengers (Boarding Stack)
+                    case 8:
+                        break;
+
+                    // Generate Flight Manifes
+                    case 9:
+                        break;
+                    // Manage Waitlist & Seat Assignment
+                    case 10:
+                        break;
+
+
+                } // Switch
+            } // While
+        } // Main
+    } // Program
+} // Namespace
