@@ -99,6 +99,9 @@
                 return;
             }
 
+            // 2nd requirement 
+            Console.WriteLine("No. | Passenger Name | Ticket ID | Status");
+            Console.WriteLine();
         }
 
             static void Main(string[] args)
