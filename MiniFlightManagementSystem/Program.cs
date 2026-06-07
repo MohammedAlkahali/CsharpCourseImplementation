@@ -86,6 +86,21 @@
 
         }
 
+        // ==========================================================================================
+
+        // Case 02 View All Passengers
+
+        public static void ViewPassenger (List<string> passengerNames, List<string> ticketNumbers, List<string> cancelledTickets)
+        {
+            // 1st requirment 
+            if(passengerNames.Count == 0)
+            {
+                Console.WriteLine("There is no passengers registered yet");
+                return;
+            }
+
+        }
+
             static void Main(string[] args)
             {
             bool exit = false;
