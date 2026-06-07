@@ -195,6 +195,10 @@
                     case 10:
                         break;
 
+                    case 0:
+                        exit = true;
+                        Console.WriteLine("Thank you for using our System. Goodbye!");
+                        break;
 
                 } // Switch
             } // While
