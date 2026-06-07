@@ -120,10 +120,10 @@
             
         }
 
-
-
+        // ==========================================================================================
 
         // Case 03 Book a Flight Ticket
+
 
 
         static void Main(string[] args)
@@ -167,6 +167,7 @@
 
                     // To Book a Flight Ticket
                     case 3:
+
                         break;
 
                     // View Booking Detail
@@ -199,6 +200,12 @@
                         exit = true;
                         Console.WriteLine("Thank you for using our System. Goodbye!");
                         break;
+
+                    default:
+                        Console.WriteLine("Invalid option. Please select a valid number.");
+                        break;
+
+
 
                 } // Switch
             } // While
