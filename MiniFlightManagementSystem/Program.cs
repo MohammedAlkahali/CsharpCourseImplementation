@@ -102,7 +102,18 @@
             // 2nd requirement 
             Console.WriteLine("No. | Passenger Name | Ticket ID | Status");
             Console.WriteLine();
+
+            // 3rd requirement 
+            for (int i = 0; i < passengerNames.Count; i++ )
+            {
+                string status = "Active";
+
+                if (cancelledTickets.Contains(ticketNumbers[i]))
+                {
+                    status = "CANCELLED";
         }
+                else
+                    Console.WriteLine((i+1) + "   |    " + passengerNames[i] + "      |  " + ticketNumbers[i] + "  |  " + status);
 
             static void Main(string[] args)
             {
