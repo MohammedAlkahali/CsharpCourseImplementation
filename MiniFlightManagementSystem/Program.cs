@@ -36,6 +36,24 @@
         static void Main(string[] args)
         {
             
-        }
-    }
-}
+            {           // Display the main menu for the user to choose
+
+                Console.WriteLine("=============================================\r\nWELCOME TO SKY WINGS FLIGHT MANAGEMENT SYSTEM\r\n=============================================");
+                Console.WriteLine("  Please select from the main menu");
+                Console.WriteLine();
+                Console.WriteLine("   1)  Register New Passenger");
+                Console.WriteLine("   2)  View All Passengers");
+                Console.WriteLine("   3)  Book a Flight Ticket");
+                Console.WriteLine("   4)  View Booking Detail");
+                Console.WriteLine("   5)  Update a Booking");
+                Console.WriteLine("   6)  Cancel a Ticket");
+                Console.WriteLine("   7)  Passenger Check-In");
+                Console.WriteLine("   8)  Board Passengers (Boarding Stack)");
+                Console.WriteLine("   9)  Generate Flight Manifes");
+                Console.WriteLine("   10) Manage Waitlist & Seat Assignment");
+                Console.WriteLine("   0)  Exit");
+                Console.WriteLine(" =============================================");
+
+                Console.Write("   -> Select: ");
+
+                int Select = int.Parse(Console.ReadLine());
