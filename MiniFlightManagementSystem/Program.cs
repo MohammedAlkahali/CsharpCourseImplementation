@@ -191,7 +191,11 @@
                 return;
             }
 
+            //  Store the booking in bookingRecord
+            bookingRecord.Add(ticketID, flightNumbers[FlightNum] + "|" + availableDates[DateNum]);
 
+            int index = ticketNumbers.IndexOf(ticketID);
+            string passengerName = passengerNames[index];
 
         static void Main(string[] args)
             {
