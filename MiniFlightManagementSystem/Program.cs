@@ -141,6 +141,13 @@
                 return;
             }
 
+            //  Check if the ticket is already in bookingRecord
+            if (bookingRecord.ContainsKey(ticketID))
+            {
+                Console.WriteLine("the ticket already has a booking");
+                return;
+            }
+
 
 
         static void Main(string[] args)
