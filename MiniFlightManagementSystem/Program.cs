@@ -148,6 +148,13 @@
                 return;
             }
 
+            // Display all available flight numbers
+            for (int i = 0; i < flightNumbers.Length; i++)
+            {
+                Console.WriteLine( i + ") " + flightNumbers[i]);
+            }
+            }
+
 
 
         static void Main(string[] args)
