@@ -175,6 +175,20 @@
             {
                 Console.WriteLine(i + ") " + availableDates[1]);
             }
+
+            //  Prompt the user to select a date 
+            Console.Write("Select a date from dates available: ");
+            int DateNum;
+
+            if (!int.TryParse(Console.ReadLine(), out DateNum))
+            {
+                Console.WriteLine("Invalid number, please choose again");
+                return;
+            }
+            if (DateNum < 0 || DateNum >= availableDates.Count)
+            {
+                Console.WriteLine("Invalid number, please choose again");
+                return;
             }
 
 
