@@ -123,6 +123,23 @@
         // ==========================================================================================
 
         // Case 03 Book a Flight Ticket
+        public static void BookFlight (List<string> ticketNumbers, string[] flightNumbers, List<String> availableDates, Dictionary<int, string> bookingRecord, List<string> cancelledTickets)
+        {
+            // 1st Reqirement 
+            Console.Write("Enter the ticket ID: ");
+            string ticketID = Console.ReadLine();
+
+            if (!ticketNumbers.Contains(ticketID))
+            {
+                Console.WriteLine("Error, not found");
+                return;
+            }
+
+            if (cancelledTickets.Contains(ticketID))
+            {
+                Console.WriteLine("The ticket is cancelled");
+                return;
+            }
 
 
 
