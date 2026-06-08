@@ -126,17 +126,20 @@
         public static void BookFlight (List<string> ticketNumbers, string[] flightNumbers, List<String> availableDates, Dictionary<string, string> bookingRecord, List<string> cancelledTickets)
         {
             // Prompt for a ticket ID
+            Console.WriteLine();
             Console.Write("Enter the ticket ID: ");
             string ticketID = Console.ReadLine();
 
             if (!ticketNumbers.Contains(ticketID))
             {
+                Console.WriteLine();
                 Console.WriteLine("Error, not found");
                 return;
             }
 
             if (cancelledTickets.Contains(ticketID))
             {
+                Console.WriteLine();
                 Console.WriteLine("The ticket is cancelled");
                 return;
             }
@@ -144,6 +147,7 @@
             //  Check if the ticket is already in bookingRecord
             if (bookingRecord.ContainsKey(ticketID))
             {
+                Console.WriteLine();
                 Console.WriteLine("the ticket already has a booking");
                 return;
             }
@@ -151,43 +155,50 @@
             // Display all available flight numbers
             for (int i = 0; i < flightNumbers.Length; i++)
             {
-                Console.WriteLine( i + ") " + flightNumbers[i]);
+                Console.WriteLine( i + 1 + ") " + flightNumbers[i]);
             }
 
             // Prompt the user to select a flight
+            Console.WriteLine();
             Console.Write("Select a flight by the number: ");
             int FlightNum;
 
             if (!int.TryParse(Console.ReadLine(), out FlightNum))
             {
+                Console.WriteLine();
                 Console.WriteLine("Enter a valid number");
                 return;
             }
 
             if (FlightNum < 0 || FlightNum >= flightNumbers.Length)
             {
-                Console.WriteLine("Invalid number, please choose again");
+                Console.WriteLine();
+                Console.WriteLine("Invalid number");
                 return;
             }
 
             // Display all available dates
             for (int i = 0; i < availableDates.Count; i++)
             {
-                Console.WriteLine(i + ") " + availableDates[1]);
+                Console.WriteLine(i + 1 + ") " + availableDates[i]);
             }
 
             //  Prompt the user to select a date 
+            Console.WriteLine();
             Console.Write("Select a date from dates available: ");
+
             int DateNum;
 
             if (!int.TryParse(Console.ReadLine(), out DateNum))
             {
-                Console.WriteLine("Invalid number, please choose again");
+                Console.WriteLine();
+                Console.WriteLine("Invalid number");
                 return;
             }
             if (DateNum < 0 || DateNum >= availableDates.Count)
             {
-                Console.WriteLine("Invalid number, please choose again");
+                Console.WriteLine();
+                Console.WriteLine("Invalid number");
                 return;
             }
 
@@ -199,11 +210,14 @@
 
             //  Display a booking confirmation showing ticket ID, passenger name, flight, and date
             Console.WriteLine("Booking successfully confirmed");
+            Console.WriteLine();
             Console.WriteLine("Ticket: " + ticketID + " | Passenger: " + passengerName);
             Console.WriteLine("Flight: " + flightNumbers[FlightNum] + " | Date: " + availableDates[DateNum]);
         }
-          
-        
+
+        // ==========================================================================================
+
+        // Case 04 View Booking Details
 
 
         static void Main(string[] args)
