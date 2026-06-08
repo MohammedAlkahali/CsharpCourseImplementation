@@ -164,6 +164,19 @@
                 return;
             }
 
+            if (FlightNum < 0 || FlightNum >= flightNumbers.Length)
+            {
+                Console.WriteLine("Invalid number, please choose again");
+                return;
+            }
+
+            // Display all available dates
+            for (int i = 0; i < availableDates.Count; i++)
+            {
+                Console.WriteLine(i + ") " + availableDates[1]);
+            }
+            }
+
 
 
         static void Main(string[] args)
