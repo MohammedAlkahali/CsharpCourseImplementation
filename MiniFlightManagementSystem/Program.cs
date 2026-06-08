@@ -21,7 +21,7 @@
             "1 - 7 - 2026", "3 - 7 - 2026", "5 - 7 - 2026"
         };
 
-        static Dictionary<int, string> bookingRecord = new Dictionary<int, string>();
+        static Dictionary<string, string> bookingRecord = new Dictionary<string, string>();
 
         static  Queue<String> checkedInQueue = new Queue<string>();
 
@@ -123,9 +123,9 @@
         // ==========================================================================================
 
         // Case 03 Book a Flight Ticket
-        public static void BookFlight (List<string> ticketNumbers, string[] flightNumbers, List<String> availableDates, Dictionary<int, string> bookingRecord, List<string> cancelledTickets)
+        public static void BookFlight (List<string> ticketNumbers, string[] flightNumbers, List<String> availableDates, Dictionary<string, string> bookingRecord, List<string> cancelledTickets)
         {
-            // 1st Reqirement 
+            // Prompt for a ticket ID
             Console.Write("Enter the ticket ID: ");
             string ticketID = Console.ReadLine();
 
@@ -197,6 +197,15 @@
             int index = ticketNumbers.IndexOf(ticketID);
             string passengerName = passengerNames[index];
 
+            //  Display a booking confirmation showing ticket ID, passenger name, flight, and date
+            Console.WriteLine("Booking successfully confirmed");
+            Console.WriteLine("Ticket: " + ticketID + " | Passenger: " + passengerName);
+            Console.WriteLine("Flight: " + flightNumbers[FlightNum] + " | Date: " + availableDates[DateNum]);
+        }
+          
+        
+
+
         static void Main(string[] args)
             {
             bool exit = false;
@@ -238,7 +247,7 @@
 
                     // To Book a Flight Ticket
                     case 3:
-
+                        BookFlight(ticketNumbers, flightNumbers, availableDates, bookingRecord, cancelledTickets);
                         break;
 
                     // View Booking Detail
@@ -266,12 +275,12 @@
                     // Manage Waitlist & Seat Assignment
                     case 10:
                         break;
-
+                    
                     case 0:
                         exit = true;
                         Console.WriteLine("Thank you for using our System. Goodbye!");
                         break;
-
+                    
                     default:
                         Console.WriteLine("Invalid option. Please select a valid number.");
                         break;
