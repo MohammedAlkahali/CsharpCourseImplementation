@@ -153,6 +153,15 @@
             {
                 Console.WriteLine( i + ") " + flightNumbers[i]);
             }
+
+            // Prompt the user to select a flight
+            Console.Write("Select a flight by the number: ");
+            int FlightNum;
+
+            if (!int.TryParse(Console.ReadLine(), out FlightNum))
+            {
+                Console.WriteLine("Enter a valid number");
+                return;
             }
 
 
