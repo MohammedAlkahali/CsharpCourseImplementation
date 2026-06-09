@@ -249,6 +249,12 @@
             string passengerName = passengerNames[index];
 
 
+            //  Check if the ticket is in cancelledTickets
+            if(cancelledTickets.Contains(ticketID))
+            {
+                Console.WriteLine("This ticket has been cancelled");
+                return;
+            }
             // Check if the ticket is in cancelledTickets.
             
 
