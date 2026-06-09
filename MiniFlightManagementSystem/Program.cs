@@ -244,7 +244,10 @@
 
 
 
-            //
+            // Retrieve the passenger name from passengerNames
+            int index = ticketNumbers.IndexOf(ticketID);
+            string passengerName = passengerNames[index];
+
 
             // Check if the ticket is in cancelledTickets.
             
