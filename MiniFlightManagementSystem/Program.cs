@@ -283,6 +283,35 @@
 
             
 
+        // Case 05 Update a Booking
+        public static void UpdateBooking(List<string> ticketNumbers, Dictionary<string, string> bookingRecord,
+                                         string[] flightNumbers, List<string> availableDates, List<string> cancelledTickets)
+        {
+            // 1. Ask for ticket ID
+            Console.WriteLine();
+            Console.Write("Enter the ticket ID: ");
+            string ticketID = Console.ReadLine();
+
+            // Validate: exists
+            if (!ticketNumbers.Contains(ticketID))
+            {
+                Console.WriteLine("Ticket not found.");
+                return;
+            }
+
+            // Validate: not cancelled
+            if (cancelledTickets.Contains(ticketID))
+            {
+                Console.WriteLine("This ticket has been cancelled.");
+                return;
+            }
+
+            // Validate: has a booking
+            if (!bookingRecord.ContainsKey(ticketID))
+            {
+                Console.WriteLine("No booking found for this ticket.");
+                return;
+            }
         }
 
 
