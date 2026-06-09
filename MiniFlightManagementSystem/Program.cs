@@ -255,7 +255,32 @@
                 Console.WriteLine("This ticket has been cancelled");
                 return;
             }
-            // Check if the ticket is in cancelledTickets.
+
+            // Use the Dictionary to retrieve the booking value. 
+            if (!bookingRecord.ContainsKey(ticketID))
+            {
+                Console.WriteLine("No booking found for this ticket.");
+                return;
+            }
+
+            //  Split the retrieved value 
+            string value = bookingRecord[ticketID];        // get "FN-101|date"
+            string[] parts = value.Split('|');             // break at the |
+            string flight = parts[0];                       // before the | = flight
+            string date = parts[1];                         // after the | = date
+
+
+            Console.WriteLine();
+            Console.WriteLine("===== BOOKING DETAILS =====");
+            Console.WriteLine("Passenger : " + passengerName);
+            Console.WriteLine("Ticket ID : " + ticketID);
+            Console.WriteLine("Flight    : " + flight);
+            Console.WriteLine("Date      : " + date);
+            Console.WriteLine("===========================");
+        }
+
+
+
             
 
         }
@@ -313,6 +338,7 @@
 
                     // View Booking Detail
                     case 4:
+                        ViewBooking(ticketNumbers, passengerNames, bookingRecord, cancelledTickets);
                         break;
 
 
