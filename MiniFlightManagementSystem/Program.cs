@@ -312,6 +312,32 @@
                 Console.WriteLine("No booking found for this ticket.");
                 return;
             }
+
+            // 2. Split current booking into flight + date
+            string[] parts = bookingRecord[ticketID].Split('|');
+            string currentFlight = parts[0];
+            string currentDate = parts[1];
+
+            Console.WriteLine();
+            Console.WriteLine("===== CURRENT BOOKING =====");
+            Console.WriteLine("Flight    : " + currentFlight);
+            Console.WriteLine("Date      : " + currentDate);
+            Console.WriteLine("===========================");
+
+            // 3. Sub-menu
+            Console.WriteLine();
+            Console.WriteLine("1) Change flight only");
+            Console.WriteLine("2) Change date only");
+            Console.WriteLine("3) Change both");
+            Console.WriteLine("0) Cancel update");
+            Console.Write("Choose: ");
+
+            int choice;
+            if (!int.TryParse(Console.ReadLine(), out choice))
+            {
+                Console.WriteLine("Invalid input.");
+                return;
+            }
         }
 
 
