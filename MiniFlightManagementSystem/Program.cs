@@ -624,7 +624,7 @@
                         Console.WriteLine("Waitlist count: " + waitlistQueue.Count);
                         break;
 
-                    //Requirement 6: For process next
+                    // Requirement 6: For process next
                     case 3:
                         if (checkedInQueue.Count == 0)
                         {
@@ -725,10 +725,10 @@
                         break;
 
 
-                    //// Passenger Check-In
-                    //case 7:
-                    //    PassengerCheckIn(ticketNumbers, passengerNames, cancelledTickets, checkedInQueue, waitlistQueue, bookingRecord);
-                    //    break;
+                    // Passenger Check-In
+                    case 7:
+                        PassengerCheckIn(ticketNumbers, passengerNames, cancelledTickets, checkedInQueue, waitlistQueue, bookingRecord);
+                        break;
 
 
                     //// Board Passengers (Boarding Stack)
