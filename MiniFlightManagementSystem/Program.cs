@@ -93,9 +93,25 @@
                 return;
             }
 
+            // --------------------------------------------------------------------------------------
+            // Old 
+
             // Validate name does not already exist in passengerNames
-            bool nameExist = false;
-            foreach (string existingName in passengerNames)
+            //bool nameExist = false;
+            //foreach (string existingName in passengerNames)
+            //{
+            //    if (string.Equals(existingName, name, StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        Console.WriteLine("The name of the passenger already exists.");
+            //        nameExist = true;
+            //        return;
+            //    }
+            //}
+
+            // New
+            bool nameExist = passengerNames.Any(n => n.Equals(name, StringComparison.OrdinalIgnoreCase));
+
+            if (nameExist)
             {
                 if (string.Equals(existingName, name))
                 {
@@ -104,6 +120,8 @@
                     return;
                 }
             }
+
+            // ----------------------------------------------------------------------------------------------
 
 
             // Auto-generate the ticket ID using the format TKT-XXX
