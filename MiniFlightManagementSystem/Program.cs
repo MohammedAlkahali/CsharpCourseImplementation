@@ -16,20 +16,20 @@
 
         static string[] flightNumbers = { "FN-101", "FN-102", "FN-103", "FN-104", "FN-105", "FN-106" };
 
-        static  List<String> availableDates = new List<String>()
+        static List<String> availableDates = new List<String>()
         {
             "1 - 7 - 2026", "3 - 7 - 2026", "5 - 7 - 2026"
         };
 
         static Dictionary<string, string> bookingRecord = new Dictionary<string, string>();
 
-        static  Queue<String> checkedInQueue = new Queue<string>();
+        static Queue<String> checkedInQueue = new Queue<string>();
 
         static Stack<string> boardingStack = new Stack<string>();
 
         static List<string> cancelledTickets = new List<string>();
 
-        static Dictionary<string,string> passengerSeatMap = new Dictionary<string,string>();
+        static Dictionary<string, string> passengerSeatMap = new Dictionary<string, string>();
 
         static Queue<string> waitlistQueue = new Queue<string>();
 
@@ -88,7 +88,7 @@
 
         // ====================================================================================================================================================================================
         // CASE 02 - VIEW ALL PASSENGER
-        public static void ViewPassenger (List<string> passengerNames, List<string> ticketNumbers, List<string> cancelledTickets)
+        public static void ViewPassenger(List<string> passengerNames, List<string> ticketNumbers, List<string> cancelledTickets)
         {
             //  Check if passengerNames is empty
             if (passengerNames.Count == 0)
@@ -104,7 +104,7 @@
 
 
             //  Iterate over passengerNames using a for loop 
-            for (int i = 0; i < passengerNames.Count; i++ )
+            for (int i = 0; i < passengerNames.Count; i++)
             {
                 //  check whether it exists in cancelledTickets
                 string status = "Active";
@@ -113,12 +113,12 @@
                     status = "CANCELLED";
                 }
                 else
-                    Console.WriteLine((i+1) + "   |    " + passengerNames[i] + "      |  " + ticketNumbers[i] + "  |  " + status);
+                    Console.WriteLine((i + 1) + "   |    " + passengerNames[i] + "      |  " + ticketNumbers[i] + "  |  " + status);
 
 
                 //  Display the total passenger
                 Console.WriteLine();
-                Console.WriteLine("The total passenger: " +passengerNames.Count);
+                Console.WriteLine("The total passenger: " + passengerNames.Count);
                 Console.WriteLine();
             }
         }
@@ -128,7 +128,7 @@
 
         // ====================================================================================================================================================================================
         // CASE 03 - BOOK A FLIGHT TICKET 
-        public static void BookFlight (List<string> ticketNumbers, string[] flightNumbers, List<String> availableDates, Dictionary<string, string> bookingRecord, List<string> cancelledTickets)
+        public static void BookFlight(List<string> ticketNumbers, string[] flightNumbers, List<String> availableDates, Dictionary<string, string> bookingRecord, List<string> cancelledTickets)
         {
             // Prompt for a ticket ID
             Console.WriteLine();
@@ -162,7 +162,7 @@
             // Display all available flight numbers
             for (int i = 0; i < flightNumbers.Length; i++)
             {
-                Console.WriteLine( i + 1 + ") " + flightNumbers[i]);
+                Console.WriteLine(i + 1 + ") " + flightNumbers[i]);
             }
 
 
@@ -253,13 +253,25 @@
 
 
             //  Check if the ticket is in cancelledTickets
-            if(cancelledTickets.Contains(ticketID))
+            if (cancelledTickets.Contains(ticketID))
             {
                 Console.WriteLine("This ticket has been cancelled");
                 return;
             }
-            // Check if the ticket is in cancelledTickets.
-            
+
+            // Use the Dictionary to retrieve the booking value. 
+            if (!bookingRecord.ContainsKey(ticketID))
+            {
+                Console.WriteLine("No booking found for this ticket.");
+                return;
+            }
+
+            //  Split the retrieved value 
+            string value = bookingRecord[ticketID];        // get "FN-101|date"
+            string[] parts = value.Split('|');             // break at the |
+            string flight = parts[0];                       // before the | = flight
+            string date = parts[1];                         // after the | = date
+
 
             Console.WriteLine();
             Console.WriteLine("===== BOOKING DETAILS =====");
@@ -274,12 +286,12 @@
 
 
 
-        
 
-        
+
+
 
         static void Main(string[] args)
-            {
+        {
             bool exit = false;
             while (exit == false)
 
@@ -302,14 +314,14 @@
                 Console.WriteLine(" =============================================");
 
                 Console.Write("   -> Select: ");
-                
+
                 int Select = int.Parse(Console.ReadLine());
 
                 switch (Select)
                 {
                     // For registering a new Passenger
                     case 1:
-                        NewPassenger(passengerNames, ticketNumbers); 
+                        NewPassenger(passengerNames, ticketNumbers);
                         break;
 
 
@@ -363,13 +375,13 @@
                     // Manage Waitlist & Seat Assignment
                     case 10:
                         break;
-                    
+
 
                     case 0:
                         exit = true;
                         Console.WriteLine("Thank you for using our System. Goodbye!");
                         break;
-                    
+
 
                     default:
                         Console.WriteLine("Invalid option. Please select a valid number.");
