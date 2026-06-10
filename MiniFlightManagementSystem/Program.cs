@@ -524,6 +524,32 @@
         }
 
 
+
+
+        // ====================================================================================================================================================================================
+        // Case 07 Passenger Check-In
+        public static void PassengerCheckIn(List<string> ticketNumbers, List<string> passengerNames,
+                                            List<string> cancelledTickets, Queue<string> checkedInQueue,
+                                            Queue<string> waitlistQueue, Dictionary<string, string> bookingRecord)
+        {
+            bool back = false;
+            while (back == false)
+            {
+                // Requirement 1: Display a sub-menu
+                Console.WriteLine();
+                Console.WriteLine("--- CHECK-IN MENU ---");
+                Console.WriteLine("1) Check in a passenger");
+                Console.WriteLine("2) View check-in queue");
+                Console.WriteLine("3) Process next passenger");
+                Console.WriteLine("0) Back");
+                Console.WriteLine();
+                Console.Write("Choose: ");
+
+                int choice;
+                if (!int.TryParse(Console.ReadLine(), out choice))
+                {
+                    Console.WriteLine("Invalid input.");
+                    continue;   // restart the sub-menu loop
         }
 
 
