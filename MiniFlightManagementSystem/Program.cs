@@ -552,6 +552,13 @@
                     continue;   // restart the sub-menu loop
         }
 
+                switch (choice)
+                {
+                    // Requirement 2: 
+                    //  prompt for ticket ID
+                    case 1:
+                        Console.Write("Enter the ticket ID: ");
+                        string ticketID = Console.ReadLine();
 
         static void Main(string[] args)
         {
