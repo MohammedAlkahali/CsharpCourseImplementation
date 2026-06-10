@@ -589,6 +589,13 @@
                             Console.WriteLine(passengerName + " is already in the check-in queue.");
                             break;
                         }
+
+                        // Requirement 3: checkedInQueue.Count is less than 10
+                        if (checkedInQueue.Count < 10)
+                        {
+                            checkedInQueue.Enqueue(passengerName);
+                            Console.WriteLine(passengerName + " checked in successfully.");
+                        }
         static void Main(string[] args)
         {
             bool exit = false;
