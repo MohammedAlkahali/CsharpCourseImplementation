@@ -475,6 +475,19 @@
 
             // Requirement 4: Add the ticket to cancelledTickets
             cancelledTickets.Add(ticketID);
+
+            // Requirement 5 rebuild the queue using a temporary Queue
+            if (checkedInQueue.Contains(passengerName))
+            {
+                Queue<string> tempQueue = new Queue<string>();
+                while (checkedInQueue.Count > 0)
+                {
+                    string person = checkedInQueue.Dequeue();   // take from front
+                    if (person != passengerName)                // skip the cancelled one
+                    {
+                        tempQueue.Enqueue(person);              // keep the rest
+                    }
+                }
         }
 
 
