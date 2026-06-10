@@ -302,6 +302,12 @@
                 return;
             }
 
+            // Validate is not cancelled
+            if (cancelledTickets.Contains(ticketID))
+            {
+                Console.WriteLine("This ticket has been cancelled.");
+                return;
+            }
 
 
 
