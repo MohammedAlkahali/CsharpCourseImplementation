@@ -316,6 +316,16 @@
                 return;
             }
 
+            // Requirement 2: Display the current booking details (flight and date)
+            string[] parts = bookingRecord[ticketID].Split('|');
+            string currentFlight = parts[0];
+            string currentDate = parts[1];
+
+            Console.WriteLine();
+            Console.WriteLine("===== CURRENT BOOKING =====");
+            Console.WriteLine("Flight    : " + currentFlight);
+            Console.WriteLine("Date      : " + currentDate);
+            Console.WriteLine("===========================");
 
         static void Main(string[] args)
         {
