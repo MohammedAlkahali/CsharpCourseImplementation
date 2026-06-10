@@ -285,6 +285,15 @@
 
 
 
+        // Case 05 Update a Booking
+        public static void UpdateBooking(List<string> ticketNumbers, Dictionary<string, string> bookingRecord,
+                                         string[] flightNumbers, List<string> availableDates, List<string> cancelledTickets)
+        {
+            // Requirement 1
+            // Prompt for ticket ID
+            Console.WriteLine();
+            Console.Write("Enter the ticket ID: ");
+            string ticketID = Console.ReadLine();
 
 
 
