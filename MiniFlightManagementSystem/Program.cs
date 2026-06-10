@@ -582,6 +582,13 @@
                         // get passenger name (index sync)
                         int index = ticketNumbers.IndexOf(ticketID);
                         string passengerName = passengerNames[index];
+
+                        // confirm the passenger is not already in the queue
+                        if (checkedInQueue.Contains(passengerName))
+                        {
+                            Console.WriteLine(passengerName + " is already in the check-in queue.");
+                            break;
+                        }
         static void Main(string[] args)
         {
             bool exit = false;
