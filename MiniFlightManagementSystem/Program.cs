@@ -2,18 +2,28 @@
 {
     internal class Program
     {
+        //--------------------------------------------------------------------
+        // OLD — hardcoded starter passengers
+        //static List<String> passengerNames = new List<String>()
 
-        static List<String> passengerNames = new List<String>()
+        //{
+        //    "Mohammed", "Ahmed", "Luqman", "Ali", "Salem"
+        //};
 
-        {
-            "Mohammed", "Ahmed", "Luqman", "Ali", "Salem"
-        };
+        //static List<String> ticketNumbers = new List<String>()
+        //{
+        //    "TKT-001", "TKT-002", "TKT-003", "TKT-004", "TKT-005"
+        //};
 
-        static List<String> ticketNumbers = new List<String>()
-        {
-            "TKT-001", "TKT-002", "TKT-003", "TKT-004", "TKT-005"
-        };
+        // New
+        static List<string> passengerNames = new List<string>();
+        static List<string> ticketNumbers = new List<string>();
 
+        // File paths for saving and loading passenger data
+        static string namesFile = "passengerNames.txt";
+        static string ticketsFile = "ticketNumbers.txt";
+
+        // ====================================================================================================================================================================================
         static string[] flightNumbers = { "FN-101", "FN-102", "FN-103", "FN-104", "FN-105", "FN-106" };
 
         static List<String> availableDates = new List<String>()
