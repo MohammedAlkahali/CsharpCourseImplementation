@@ -560,6 +560,12 @@
                         Console.Write("Enter the ticket ID: ");
                         string ticketID = Console.ReadLine();
 
+                        //  validate it exists 
+                        if (!ticketNumbers.Contains(ticketID))
+                        {
+                            Console.WriteLine("Ticket not found.");
+                            break;
+                        }
         static void Main(string[] args)
         {
             bool exit = false;
