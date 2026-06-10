@@ -566,6 +566,12 @@
                             Console.WriteLine("Ticket not found.");
                             break;
                         }
+                        // validate is not cancelled
+                        if (cancelledTickets.Contains(ticketID))
+                        {
+                            Console.WriteLine("This ticket is cancelled.");
+                            break;
+                        }
         static void Main(string[] args)
         {
             bool exit = false;
