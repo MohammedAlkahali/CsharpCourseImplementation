@@ -578,6 +578,10 @@
                             Console.WriteLine("This ticket has no booking.");
                             break;
                         }
+
+                        // get passenger name (index sync)
+                        int index = ticketNumbers.IndexOf(ticketID);
+                        string passengerName = passengerNames[index];
         static void Main(string[] args)
         {
             bool exit = false;
