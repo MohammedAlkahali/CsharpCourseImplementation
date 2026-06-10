@@ -444,19 +444,19 @@
                                         Queue<string> checkedInQueue, Stack<string> boardingStack)
         {
             // Requirement 1
-            // 1. Ask for ticket ID
+            // Ask for ticket ID
             Console.WriteLine();
             Console.Write("Enter the ticket ID: ");
             string ticketID = Console.ReadLine();
 
-            // Validate: exists
+            // Validate it exists in ticketNumbers
             if (!ticketNumbers.Contains(ticketID))
             {
                 Console.WriteLine("Ticket not found.");
                 return;
             }
 
-            // Validate: not already cancelled
+            // Validate is not already in cancelledTickets
             if (cancelledTickets.Contains(ticketID))
             {
                 Console.WriteLine("This ticket is already cancelled.");
@@ -467,11 +467,18 @@
             int index = ticketNumbers.IndexOf(ticketID);
             string passengerName = passengerNames[index];
 
+            // Requirement 3: If a booking exists, remove it from the dictionary
+            if (bookingRecord.ContainsKey(ticketID))
+            {
+                string removedBooking = bookingRecord[ticketID];
+                bookingRecord.Remove(ticketID);
+                Console.WriteLine("Booking removed: " + removedBooking);
+            }
 
         }
 
 
-            static void Main(string[] args)
+        static void Main(string[] args)
         {
             bool exit = false;
             while (exit == false)
