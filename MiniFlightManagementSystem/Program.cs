@@ -604,6 +604,25 @@
                             Console.WriteLine("Check-in queue is full. " + passengerName + " was placed on the waitlist.");
                         }
                         break;
+
+                    // Requirement 5: display all passengers currently in checkedInQueue using foreach 
+                    case 2:
+                        if (checkedInQueue.Count == 0)
+                        {
+                            Console.WriteLine("The check-in queue is empty.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("--- Check-In Queue ---");
+                            int pos = 1;
+                            foreach (string person in checkedInQueue)   // display WITHOUT dequeuing
+                            {
+                                Console.WriteLine(pos + ". " + person);
+                                pos++;
+                            }
+                        }
+                        Console.WriteLine("Waitlist count: " + waitlistQueue.Count);
+                        break;
         static void Main(string[] args)
         {
             bool exit = false;
