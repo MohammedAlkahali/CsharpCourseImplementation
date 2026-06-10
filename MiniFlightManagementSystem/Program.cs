@@ -33,6 +33,9 @@
 
         static Queue<string> waitlistQueue = new Queue<string>();
 
+        static int seatRow = 10;
+
+        static char seatLetter = 'A';
         // ====================================================================================================================================================================================
         // CASE 1 - REGISTER NEW PASSENGER
         public static void NewPassenger(List<string> passengerNames, List<string> ticketNumbers)
@@ -281,68 +284,11 @@
 
 
 
-            
-
-        // Case 05 Update a Booking
-        public static void UpdateBooking(List<string> ticketNumbers, Dictionary<string, string> bookingRecord,
-                                         string[] flightNumbers, List<string> availableDates, List<string> cancelledTickets)
-        {
-            // 1. Ask for ticket ID
-            Console.WriteLine();
-            Console.Write("Enter the ticket ID: ");
-            string ticketID = Console.ReadLine();
-
-            // Validate: exists
-            if (!ticketNumbers.Contains(ticketID))
-            {
-                Console.WriteLine("Ticket not found.");
-                return;
-            }
-
-            // Validate: not cancelled
-            if (cancelledTickets.Contains(ticketID))
-            {
-                Console.WriteLine("This ticket has been cancelled.");
-                return;
-            }
-
-            // Validate: has a booking
-            if (!bookingRecord.ContainsKey(ticketID))
-            {
-                Console.WriteLine("No booking found for this ticket.");
-                return;
-            }
-
-            // 2. Split current booking into flight + date
-            string[] parts = bookingRecord[ticketID].Split('|');
-            string currentFlight = parts[0];
-            string currentDate = parts[1];
-
-            Console.WriteLine();
-            Console.WriteLine("===== CURRENT BOOKING =====");
-            Console.WriteLine("Flight    : " + currentFlight);
-            Console.WriteLine("Date      : " + currentDate);
-            Console.WriteLine("===========================");
-
-            // 3. Sub-menu
-            Console.WriteLine();
-            Console.WriteLine("1) Change flight only");
-            Console.WriteLine("2) Change date only");
-            Console.WriteLine("3) Change both");
-            Console.WriteLine("0) Cancel update");
-            Console.Write("Choose: ");
-
-            int choice;
-            if (!int.TryParse(Console.ReadLine(), out choice))
-            {
-                Console.WriteLine("Invalid input.");
-                return;
-            }
-        }
 
 
+        
 
-
+        
 
         static void Main(string[] args)
             {
@@ -398,23 +344,27 @@
 
 
                     // Update a Booking
-                    case 5:
-                        break;
+                    //case 5:
+                    //    UpdateBooking(ticketNumbers, bookingRecord, flightNumbers, availableDates, cancelledTickets);
+                    //    break;
 
 
-                    // Cancel a Ticket
-                    case 6:
-                        break;
+                    //// Cancel a Ticket
+                    //case 6:
+                    //    CancelTicket(ticketNumbers, passengerNames, cancelledTickets, bookingRecord, checkedInQueue, boardingStack);
+                    //    break;
 
 
-                    // Passenger Check-In
-                    case 7:
-                        break;
+                    //// Passenger Check-In
+                    //case 7:
+                    //    PassengerCheckIn(ticketNumbers, passengerNames, cancelledTickets, checkedInQueue, waitlistQueue, bookingRecord);
+                    //    break;
 
 
-                    // Board Passengers (Boarding Stack)
-                    case 8:
-                        break;
+                    //// Board Passengers (Boarding Stack)
+                    //case 8:
+                    //    BoardPassengers(checkedInQueue, boardingStack, passengerSeatMap);
+                    //    break;
 
 
                     // Generate Flight Manifes
