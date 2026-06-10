@@ -309,6 +309,12 @@
                 return;
             }
 
+            // Validate has an existing booking in bookingRecord
+            if (!bookingRecord.ContainsKey(ticketID))
+            {
+                Console.WriteLine("No booking found for this ticket.");
+                return;
+            }
 
 
         static void Main(string[] args)
