@@ -57,6 +57,25 @@
             File.WriteAllLines(namesFile, passengerNames);
             File.WriteAllLines(ticketsFile, ticketNumbers);
         }
+
+
+        // Load passenger names and ticket numbers from text files (if they exist)
+        static void LoadPassengers()
+        {
+            if (File.Exists(namesFile))
+            {
+                passengerNames = new List<string>(File.ReadAllLines(namesFile));
+            }
+            if (File.Exists(ticketsFile))
+            {
+                ticketNumbers = new List<string>(File.ReadAllLines(ticketsFile));
+            }
+        }
+
+
+
+
+        // ====================================================================================================================================================================================
         // CASE 1 - REGISTER NEW PASSENGER
         public static void NewPassenger(List<string> passengerNames, List<string> ticketNumbers)
         {
