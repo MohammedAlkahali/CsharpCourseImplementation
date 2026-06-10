@@ -488,6 +488,13 @@
                         tempQueue.Enqueue(person);              // keep the rest
                     }
                 }
+                // move everyone back into the original queue, same order
+                while (tempQueue.Count > 0)
+                {
+                    checkedInQueue.Enqueue(tempQueue.Dequeue());
+                }
+                Console.WriteLine(passengerName + " was removed from the check-in queue.");
+            }
         }
 
 
