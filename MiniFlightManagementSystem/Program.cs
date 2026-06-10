@@ -572,6 +572,12 @@
                             Console.WriteLine("This ticket is cancelled.");
                             break;
                         }
+                        // confirm a booking exists in bookingRecord
+                        if (!bookingRecord.ContainsKey(ticketID))
+                        {
+                            Console.WriteLine("This ticket has no booking.");
+                            break;
+                        }
         static void Main(string[] args)
         {
             bool exit = false;
