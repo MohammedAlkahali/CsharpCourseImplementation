@@ -1,5 +1,7 @@
 ﻿namespace MiniFlightManagementSystem
 {
+    using System.IO;            //| New
+    using System.Linq;          //| New
     internal class Program
     {
         //--------------------------------------------------------------------
@@ -113,12 +115,8 @@
 
             if (nameExist)
             {
-                if (string.Equals(existingName, name))
-                {
-                    Console.WriteLine("The name of the passenger already exists.");
-                    nameExist = true;
-                    return;
-                }
+                Console.WriteLine("The name of the passenger already exists.");
+                return;
             }
 
             // ----------------------------------------------------------------------------------------------
@@ -770,6 +768,8 @@
                     // For registering a new Passenger
                     case 1:
                         NewPassenger(passengerNames, ticketNumbers);
+                        // New for saving the passenger after register
+                        SavePassengers();
                         break;
 
 
