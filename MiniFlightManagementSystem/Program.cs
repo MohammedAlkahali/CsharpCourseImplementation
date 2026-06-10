@@ -514,6 +514,16 @@
                 }
                 Console.WriteLine(passengerName + " was removed from the boarding stack.");
             }
+            // Requirement 7: Cancellation summary
+            Console.WriteLine();
+            Console.WriteLine("===== CANCELLATION SUMMARY =====");
+            Console.WriteLine("Ticket    : " + ticketID);
+            Console.WriteLine("Passenger : " + passengerName);
+            Console.WriteLine("Status    : CANCELLED");
+            Console.WriteLine("================================");
+        }
+
+
         }
 
 
