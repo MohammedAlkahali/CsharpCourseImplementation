@@ -46,7 +46,17 @@
         static int seatRow = 10;
 
         static char seatLetter = 'A';
+
+
+
+
         // ====================================================================================================================================================================================
+        // Save passenger names and ticket numbers to text files
+        static void SavePassengers()
+        {
+            File.WriteAllLines(namesFile, passengerNames);
+            File.WriteAllLines(ticketsFile, ticketNumbers);
+        }
         // CASE 1 - REGISTER NEW PASSENGER
         public static void NewPassenger(List<string> passengerNames, List<string> ticketNumbers)
         {
