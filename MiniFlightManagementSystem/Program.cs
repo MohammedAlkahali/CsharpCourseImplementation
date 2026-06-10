@@ -596,6 +596,14 @@
                             checkedInQueue.Enqueue(passengerName);
                             Console.WriteLine(passengerName + " checked in successfully.");
                         }
+
+                        // Requirement 4: enqueue the passenger name to waitlistQueue
+                        else
+                        {
+                            waitlistQueue.Enqueue(passengerName);
+                            Console.WriteLine("Check-in queue is full. " + passengerName + " was placed on the waitlist.");
+                        }
+                        break;
         static void Main(string[] args)
         {
             bool exit = false;
