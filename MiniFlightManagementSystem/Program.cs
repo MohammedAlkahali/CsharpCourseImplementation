@@ -255,8 +255,15 @@
                 Console.WriteLine("This ticket has been cancelled");
                 return;
             }
+
+            //  the Dictionary to retrieve the booking value.
+
+
+
+
+
             // Check if the ticket is in cancelledTickets.
-            
+
 
         }
 
