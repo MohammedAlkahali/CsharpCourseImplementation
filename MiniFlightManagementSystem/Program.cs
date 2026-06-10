@@ -285,6 +285,7 @@
 
 
 
+        // ====================================================================================================================================================================================
         // Case 05 Update a Booking
         public static void UpdateBooking(List<string> ticketNumbers, Dictionary<string, string> bookingRecord,
                                          string[] flightNumbers, List<string> availableDates, List<string> cancelledTickets)
@@ -386,8 +387,6 @@
         }
 
 
-
-
         // Show flights, get a valid pick, return the chosen flight (or null if invalid)
         public static string SelectFlight(string[] flightNumbers)
         {
@@ -409,8 +408,6 @@
             }
             return flightNumbers[pick];
         }
-
-
 
 
         // Show dates, get a valid pick, return the chosen date (or null if invalid)
@@ -438,6 +435,7 @@
 
 
 
+        // ====================================================================================================================================================================================
         // Case 06 Cancel a Ticket
         public static void CancelTicket(List<string> ticketNumbers, List<string> passengerNames,
                                         List<string> cancelledTickets, Dictionary<string, string> bookingRecord,
