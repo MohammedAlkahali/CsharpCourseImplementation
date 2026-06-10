@@ -719,6 +719,9 @@
 
         static void Main(string[] args)
         {
+
+            LoadPassengers();
+
             bool exit = false;
             while (exit == false)
 
@@ -742,8 +745,26 @@
 
                 Console.Write("   -> Select: ");
 
-                int Select = int.Parse(Console.ReadLine());
+                //--------------------------------------------------------------
+                // This line was crashing if the user types a letter
 
+                //int Select = int.Parse(Console.ReadLine());   <-------- Old
+
+
+                // New 
+                int Select;
+
+                try
+                {
+                    Select = int.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid input. Please enter a number.");
+                    continue;   // skip the rest, show the menu again
+                }
+
+                //-------------------------------------------------------------
                 switch (Select)
                 {
                     // For registering a new Passenger
