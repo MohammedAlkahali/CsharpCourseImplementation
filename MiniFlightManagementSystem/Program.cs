@@ -345,6 +345,35 @@
             
             string newFlight = currentFlight;
             string newDate = currentDate;
+
+            // Requirement 4: display available flights or dates and prompt for a new choice
+            switch (choice)
+            {
+                case 1:
+                    newFlight = SelectFlight(flightNumbers);
+                    if (newFlight == null) return;   // invalid pick -> stop
+                    break;
+
+                case 2:
+                    newDate = SelectDate(availableDates);
+                    if (newDate == null) return;
+                    break;
+
+                case 3:
+                    newFlight = SelectFlight(flightNumbers);
+                    if (newFlight == null) return;
+                    newDate = SelectDate(availableDates);
+                    if (newDate == null) return;
+                    break;
+
+                case 0:
+                    Console.WriteLine("Update cancelled. No changes made.");
+                    return;
+
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    return;
+            }
         static void Main(string[] args)
         {
             bool exit = false;
