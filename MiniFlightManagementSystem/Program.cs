@@ -295,6 +295,12 @@
             Console.Write("Enter the ticket ID: ");
             string ticketID = Console.ReadLine();
 
+            // Validate it exists
+            if (!ticketNumbers.Contains(ticketID))
+            {
+                Console.WriteLine("Ticket not found.");
+                return;
+            }
 
 
 
