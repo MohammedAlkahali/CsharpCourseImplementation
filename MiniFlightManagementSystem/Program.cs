@@ -439,29 +439,39 @@
 
 
         // Case 06 Cancel a Ticket
-        public static void CancelTicket(List<String> ticketNumbers, List<String> passengerNames, List<string> cancelledTickets, Dictionary<string, string> bookingRecord)
+        public static void CancelTicket(List<string> ticketNumbers, List<string> passengerNames,
+                                        List<string> cancelledTickets, Dictionary<string, string> bookingRecord,
+                                        Queue<string> checkedInQueue, Stack<string> boardingStack)
         {
             // Requirement 1
-            // Prompt for ticket ID
+            // 1. Ask for ticket ID
             Console.WriteLine();
             Console.Write("Enter the ticket ID: ");
             string ticketID = Console.ReadLine();
 
-            // Validate it exists
+            // Validate: exists
             if (!ticketNumbers.Contains(ticketID))
             {
                 Console.WriteLine("Ticket not found.");
                 return;
             }
 
-            // Validate is not cancelled
+            // Validate: not already cancelled
             if (cancelledTickets.Contains(ticketID))
             {
-                Console.WriteLine("This ticket has been cancelled.");
+                Console.WriteLine("This ticket is already cancelled.");
                 return;
             }
+
+            // Requirement 2: Retrieve the associated passenger name
+            int index = ticketNumbers.IndexOf(ticketID);
+            string passengerName = passengerNames[index];
+
+
         }
-        static void Main(string[] args)
+
+
+            static void Main(string[] args)
         {
             bool exit = false;
             while (exit == false)
@@ -515,15 +525,15 @@
 
 
                     // Update a Booking
-                    //case 5:
-                    //    UpdateBooking(ticketNumbers, bookingRecord, flightNumbers, availableDates, cancelledTickets);
-                    //    break;
+                    case 5:
+                        UpdateBooking(ticketNumbers, bookingRecord, flightNumbers, availableDates, cancelledTickets);
+                        break;
 
 
-                    //// Cancel a Ticket
-                    //case 6:
-                    //    CancelTicket(ticketNumbers, passengerNames, cancelledTickets, bookingRecord, checkedInQueue, boardingStack);
-                    //    break;
+                    // Cancel a Ticket
+                    case 6:
+                        CancelTicket(ticketNumbers, passengerNames, cancelledTickets, bookingRecord, checkedInQueue, boardingStack);
+                        break;
 
 
                     //// Passenger Check-In
