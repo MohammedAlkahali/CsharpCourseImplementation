@@ -327,6 +327,24 @@
             Console.WriteLine("Date      : " + currentDate);
             Console.WriteLine("===========================");
 
+            // Requirement 3: Sub-menu
+            Console.WriteLine();
+            Console.WriteLine("1) Change flight only");
+            Console.WriteLine("2) Change date only");
+            Console.WriteLine("3) Change both");
+            Console.WriteLine("0) Cancel update");
+            Console.Write("Choose: ");
+
+            int choice;
+            if (!int.TryParse(Console.ReadLine(), out choice))
+            {
+                Console.WriteLine("Invalid input.");
+                return;
+            }
+
+            
+            string newFlight = currentFlight;
+            string newDate = currentDate;
         static void Main(string[] args)
         {
             bool exit = false;
