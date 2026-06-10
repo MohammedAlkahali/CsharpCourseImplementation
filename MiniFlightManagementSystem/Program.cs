@@ -374,6 +374,18 @@
                     Console.WriteLine("Invalid choice.");
                     return;
             }
+
+            // Requirement 5: overwrite the existing dictionary entry.
+            bookingRecord[ticketID] = newFlight + "|" + newDate;
+
+            // Requirement 6: Display a confirmation showing the old booking details and the new updated 
+            Console.WriteLine();
+            Console.WriteLine("Booking updated successfully!");
+            Console.WriteLine("OLD  ->  Flight: " + currentFlight + " | Date: " + currentDate);
+            Console.WriteLine("NEW  ->  Flight: " + newFlight + " | Date: " + newDate);
+        }
+
+
         static void Main(string[] args)
         {
             bool exit = false;
