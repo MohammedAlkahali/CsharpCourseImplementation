@@ -550,7 +550,7 @@
                 {
                     Console.WriteLine("Invalid input.");
                     continue;   // restart the sub-menu loop
-        }
+                }
 
                 switch (choice)
                 {
@@ -623,6 +623,43 @@
                         }
                         Console.WriteLine("Waitlist count: " + waitlistQueue.Count);
                         break;
+
+                    //Requirement 6: For process next
+                    case 3:
+                        if (checkedInQueue.Count == 0)
+                        {
+                            Console.WriteLine("No passengers to process.");
+                            break;
+                        }
+
+                        string processed = checkedInQueue.Dequeue();    // remove from front
+                        Console.WriteLine("Processed: " + processed);
+
+                        // a slot just freed up — pull one from the waitlist if any
+                        if (waitlistQueue.Count > 0)
+                        {
+                            string moved = waitlistQueue.Dequeue();
+                            checkedInQueue.Enqueue(moved);
+                            Console.WriteLine(moved + " moved from waitlist into the check-in queue.");
+                        }
+                        break;
+
+                    // BACK 
+                    case 0:
+                        back = true;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice.");
+                        break;
+                }
+            }
+        }
+
+
+
+
+
         static void Main(string[] args)
         {
             bool exit = false;
