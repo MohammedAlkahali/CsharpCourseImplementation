@@ -386,6 +386,81 @@
         }
 
 
+
+
+        // Show flights, get a valid pick, return the chosen flight (or null if invalid)
+        public static string SelectFlight(string[] flightNumbers)
+        {
+            for (int i = 0; i < flightNumbers.Length; i++)
+            {
+                Console.WriteLine(i + ") " + flightNumbers[i]);
+            }
+            Console.Write("Select a flight by number: ");
+            int pick;
+            if (!int.TryParse(Console.ReadLine(), out pick))
+            {
+                Console.WriteLine("Invalid number.");
+                return null;
+            }
+            if (pick < 0 || pick >= flightNumbers.Length)
+            {
+                Console.WriteLine("Out of range.");
+                return null;
+            }
+            return flightNumbers[pick];
+        }
+
+
+
+
+        // Show dates, get a valid pick, return the chosen date (or null if invalid)
+        public static string SelectDate(List<string> availableDates)
+        {
+            for (int i = 0; i < availableDates.Count; i++)
+            {
+                Console.WriteLine(i + ") " + availableDates[i]);
+            }
+            Console.Write("Select a date by number: ");
+            int pick;
+            if (!int.TryParse(Console.ReadLine(), out pick))
+            {
+                Console.WriteLine("Invalid number.");
+                return null;
+            }
+            if (pick < 0 || pick >= availableDates.Count)
+            {
+                Console.WriteLine("Out of range.");
+                return null;
+            }
+            return availableDates[pick];
+        }
+
+
+
+
+        // Case 06 Cancel a Ticket
+        public static void CancelTicket(List<String> ticketNumbers, List<String> passengerNames, List<string> cancelledTickets, Dictionary<string, string> bookingRecord)
+        {
+            // Requirement 1
+            // Prompt for ticket ID
+            Console.WriteLine();
+            Console.Write("Enter the ticket ID: ");
+            string ticketID = Console.ReadLine();
+
+            // Validate it exists
+            if (!ticketNumbers.Contains(ticketID))
+            {
+                Console.WriteLine("Ticket not found.");
+                return;
+            }
+
+            // Validate is not cancelled
+            if (cancelledTickets.Contains(ticketID))
+            {
+                Console.WriteLine("This ticket has been cancelled.");
+                return;
+            }
+        }
         static void Main(string[] args)
         {
             bool exit = false;
