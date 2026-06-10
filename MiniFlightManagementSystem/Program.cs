@@ -473,6 +473,8 @@
                 Console.WriteLine("Booking removed: " + removedBooking);
             }
 
+            // Requirement 4: Add the ticket to cancelledTickets
+            cancelledTickets.Add(ticketID);
         }
 
 
