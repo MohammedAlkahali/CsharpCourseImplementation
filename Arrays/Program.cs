@@ -113,7 +113,12 @@
 
             Console.WriteLine($"The total is: " + Total);
 
-            
+
+            double average = (double)Total / quantities.Length;
+            Console.WriteLine($"Average stock per slot: {average}");
+
+
+
         }
 
 

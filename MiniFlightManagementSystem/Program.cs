@@ -33,6 +33,9 @@
 
         static Queue<string> waitlistQueue = new Queue<string>();
 
+        static int seatRow = 10;
+
+        static char seatLetter = 'A';
         // ====================================================================================================================================================================================
         // CASE 1 - REGISTER NEW PASSENGER
         public static void NewPassenger(List<string> passengerNames, List<string> ticketNumbers)
@@ -255,21 +258,25 @@
                 Console.WriteLine("This ticket has been cancelled");
                 return;
             }
-
-            //  the Dictionary to retrieve the booking value.
-
-
-
-
-
             // Check if the ticket is in cancelledTickets.
+            
 
-
+            Console.WriteLine();
+            Console.WriteLine("===== BOOKING DETAILS =====");
+            Console.WriteLine("Passenger : " + passengerName);
+            Console.WriteLine("Ticket ID : " + ticketID);
+            Console.WriteLine("Flight    : " + flight);
+            Console.WriteLine("Date      : " + date);
+            Console.WriteLine("===========================");
         }
 
 
 
 
+
+        
+
+        
 
         static void Main(string[] args)
             {
@@ -320,27 +327,32 @@
 
                     // View Booking Detail
                     case 4:
+                        ViewBooking(ticketNumbers, passengerNames, bookingRecord, cancelledTickets);
                         break;
 
 
                     // Update a Booking
-                    case 5:
-                        break;
+                    //case 5:
+                    //    UpdateBooking(ticketNumbers, bookingRecord, flightNumbers, availableDates, cancelledTickets);
+                    //    break;
 
 
-                    // Cancel a Ticket
-                    case 6:
-                        break;
+                    //// Cancel a Ticket
+                    //case 6:
+                    //    CancelTicket(ticketNumbers, passengerNames, cancelledTickets, bookingRecord, checkedInQueue, boardingStack);
+                    //    break;
 
 
-                    // Passenger Check-In
-                    case 7:
-                        break;
+                    //// Passenger Check-In
+                    //case 7:
+                    //    PassengerCheckIn(ticketNumbers, passengerNames, cancelledTickets, checkedInQueue, waitlistQueue, bookingRecord);
+                    //    break;
 
 
-                    // Board Passengers (Boarding Stack)
-                    case 8:
-                        break;
+                    //// Board Passengers (Boarding Stack)
+                    //case 8:
+                    //    BoardPassengers(checkedInQueue, boardingStack, passengerSeatMap);
+                    //    break;
 
 
                     // Generate Flight Manifes
