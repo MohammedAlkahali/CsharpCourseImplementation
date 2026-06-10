@@ -495,6 +495,25 @@
                 }
                 Console.WriteLine(passengerName + " was removed from the check-in queue.");
             }
+            // Requirement 6: Remove the passenger from the boarding stack (if present) by rebuilding it
+            if (boardingStack.Contains(passengerName))
+            {
+                Stack<string> tempStack = new Stack<string>();
+                while (boardingStack.Count > 0)
+                {
+                    string person = boardingStack.Pop();        // take from top
+                    if (person != passengerName)
+                    {
+                        tempStack.Push(person);                 // keep the rest
+                    }
+                }
+                // pushing back from temp restores the original order
+                while (tempStack.Count > 0)
+                {
+                    boardingStack.Push(tempStack.Pop());
+                }
+                Console.WriteLine(passengerName + " was removed from the boarding stack.");
+            }
         }
 
 
